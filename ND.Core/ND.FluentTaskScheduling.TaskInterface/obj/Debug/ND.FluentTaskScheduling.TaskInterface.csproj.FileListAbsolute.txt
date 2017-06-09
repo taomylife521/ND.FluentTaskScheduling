@@ -1,0 +1,5 @@
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.TaskInterface\bin\Debug\ND.FluentTaskScheduling.TaskInterface.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.TaskInterface\bin\Debug\ND.FluentTaskScheduling.TaskInterface.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.TaskInterface\obj\Debug\ND.FluentTaskScheduling.TaskInterface.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.TaskInterface\obj\Debug\ND.FluentTaskScheduling.TaskInterface.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.TaskInterface\bin\Debug\Newtonsoft.Json.dll

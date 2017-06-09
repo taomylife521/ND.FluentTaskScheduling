@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FluentValidation.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:FluentValidation.WebApi.FluentValidationBodyModelValidator">
+            <summary>
+            Recursively validate an object.
+            Is just a copy of the DefaultBodyModelValidator but includes a "patch" for the FluentValidationModelValidator
+            When the whole model is validated the errors get added to the ModelState grouped by property instead of all under
+            the model. It also changes the check of previous errors to avoid missing error messages when there are bind errors
+            If the FluentValidationModelValidator is not used to validate, fallbacks to the DefaultBodyModelValidator behaviour
+            Another difference is that the IModelValidatorCache had to be removed because it's internal to the asp net framework
+            (affects performance but not the behaviour)
+            </summary>
+        </member>
+        <member name="M:FluentValidation.WebApi.FluentValidationModelValidatorProvider.Configure(System.Web.Http.HttpConfiguration,System.Action{FluentValidation.WebApi.FluentValidationModelValidatorProvider})">
+            <summary>
+            Initializes the FluentValidationModelValidatorProvider using the default options and adds it in to the ModelValidatorProviders collection.
+            </summary>
+        </member>
+        <member name="M:FluentValidation.WebApi.ValidationResultExtension.AddToModelState(FluentValidation.Results.ValidationResult,System.Web.Http.ModelBinding.ModelStateDictionary,System.String)">
+            <summary>
+            Stores the errors in a ValidationResult object to the specified modelstate dictionary.
+            </summary>
+            <param name="result">The validation result to store</param>
+            <param name="modelState">The ModelStateDictionary to store the errors in.</param>
+            <param name="prefix">An optional prefix. If ommitted, the property names will be the keys. If specified, the prefix will be concatenatd to the property name with a period. Eg "user.Name"</param>
+        </member>
+    </members>
+</doc>

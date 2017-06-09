@@ -1,0 +1,282 @@
+﻿@using ND.FluentTaskScheduling.Model.enums
+@using ND.FluentTaskScheduling.Model.response
+@using ND.FluentTaskScheduling.Model
+@{
+    ViewBag.Title = "Index";
+    List<NodeDetailDto> nodelist = ViewBag.NodeList as List<NodeDetailDto>;
+    List<tb_commandlibdetail> commandlist = ViewBag.CommandList as List<tb_commandlibdetail>;
+    List<TaskListDto> tasklist = ViewBag.TaskList as List<TaskListDto>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+
+
+<section class="content-header">
+    <h1>
+        命令队列列表
+        @*<small>展示列表</small>*@
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 命令管理</a></li>
+        <li><a href="#">命令队列列表</a></li>
+    </ol>
+</section>
+
+<section class="content">
+    <!--查询条件-->
+    <input type="hidden" value="@ViewBag.commandqueueid" name="CommandQueueId" id="hidCommandQueueId" />
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">检索条件</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+
+            <div class="box-body">
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>命令队列创建起始时间:</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" name="CommandQueueCreateTimeRange" value="@ViewBag.CommandQueueCreateTimeRange" class="form-control" id="reservation">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>命令名称</label>
+                            <select class="form-control select2" name="CommandId" id="selNodeNameList">
+                                <option value="-1">全部</option>
+                                @for (int i = 0; i < commandlist.Count; i++)
+                                {
+                                    <option value="@commandlist[i].id" @((ViewBag.CommandId + "") == commandlist[i].id.ToString() ? "selected='selected'" : "")>@commandlist[i].commandname</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>命令执行状态</label>
+                            <select class="form-control select2" name="CommandStatus" id="selcommandstatus">
+                                <option value="-1">全部</option>
+                                @foreach (var o in (ND.FluentTaskScheduling.Helper.EnumHelper<ExecuteStatus>.GetAllEnumsOfList2()))
+                                {
+                                    <option value="@o.Value" @((ViewBag.ExecuteStatus + "") == o.Value ? "selected='selected'" : "")>@o.Text</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>节点名称</label>
+                            <select class="form-control select2" name="NodeId" id="selnodeid">
+                                <option value="-1">全部</option>
+                                @for (int i = 0; i < nodelist.Count; i++)
+                                {
+                                    <option value="@nodelist[i].NodeDetail.id" @((ViewBag.NodeId + "") == nodelist[i].NodeDetail.id.ToString() ? "selected='selected'" : "")>@nodelist[i].NodeDetail.nodename</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>任务名称</label>
+                            <select class="form-control select2" name="TaskId" id="seltaskid">
+                                <option value="-1">全部</option>
+                                @for (int i = 0; i < tasklist.Count; i++)
+                                {
+                                    <option value="@tasklist[i].Task.id" @((ViewBag.TaskId + "") == tasklist[i].Task.id.ToString() ? "selected='selected'" : "")>@tasklist[i].Task.taskname </option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+            <div class="box-footer">
+                
+                <button type="button" id="btnSearchCommandQueue" class="btn margin-r-5 btn-primary pull-right">查询</button>
+            </div>
+
+        </div>
+    
+
+
+
+    <div class="box box-default">
+        <!--任务列表-->
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">命令队列展示列表</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="tbTaskList" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>命令队列编号</th>
+                                    <th>命令类名</th>
+                                    <th>任务名称</th>
+                                    <th>节点名称</th>
+                                    <th>命令执行状态</th>
+                                    <th>命令参数</th>
+                                    <th>创建人</th>
+                                    <th>创建时间</th>
+                                    <th>操作</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                            <tfoot>
+
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   
+</section>
+
+
+<script>
+    var tbl;
+    $(function () {
+        tbl = $('#tbTaskList').DataTable({
+            //"bFilter": true, //过滤功能
+            "aoColumns": [
+
+              { "bSortable": true, "data": "CommandQueueDetail.id" },//编号
+                {
+                    "mRender": function (mData, type, full) {
+                        var html = [];
+                        html.push("<a class=\"command\"  href=\"../Command/Index?commandid=" + full.CommandQueueDetail.commanddetailid + "\">" + full.CommandQueueDetail.commandmainclassname + "</a>")
+                        return html.join('');
+                    }
+                },
+
+                {
+                    "mRender": function (mData, type, full) {
+                        var html = [];
+                        html.push("<a class=\"task\" href=\"../Task/Index?taskid=" + full.TaskDetail.id + "\">" + full.TaskDetail.taskname + "</a>")
+                        return html.join('');
+                    }
+                },
+               {
+                   "mRender": function (mData, type, full) {
+                       var html = [];
+                       html.push("<a class=\"node\"  href=\"../Node/Index?nodeid=" + full.NodeDetail.id + "\">" + full.NodeDetail.nodename + "</a>")
+                       return html.join('');
+                   }
+               },
+                 {
+                     "mRender": function (mData, type, full) {
+                         var html = [];
+                         var ExecuteStatus = '@ViewBag.EnumExecuteStatus';
+                         // console.log('@ViewBag.EnumExecuteStatus');
+                         html.push("<a  class=\"executestatus_" + full.CommandQueueDetail.commandstate + "\">" + _G.StatusDiscription($("#selcommandstatus option"), full.CommandQueueDetail.commandstate) + "</a>")// ExecuteStatus[full.CommandQueueDetail.commandstate]
+                         return html.join('');
+                     }
+                 },
+              { "data": "CommandQueueDetail.commandparams" },
+              { "data": "CommandQueueDetail.createby" },
+              { "data": "CommandQueueDetail.createtime" },
+
+               {
+                   "bSortable": true,
+                   "mRender": function (mData, type, full) {
+                       var html = [];
+
+                       if (full.CommandQueueDetail.commandstate == '@((int)ExecuteStatus.Executing)' || full.CommandQueueDetail.commandstate == '@((int)ExecuteStatus.NoExecute)') {
+
+                           html.push("<button  class=\"btn margin-r-5  btn-sm  btn-primary  disabled\" hdt=\"btnloadexecutelog\">查看执行日志</button>")
+                       }
+                       else {
+                           html.push("<a class=\"btn margin-r-5  btn-sm  btn-primary\"  href=\"../Log/CommandQueueExcuteLog?commandqueueid=" + full.CommandQueueDetail.id + "\")\" hdt=\"btnloadexecutelog\">查看执行日志</a>")
+                       }
+                       return html.join('');
+                   }
+               },
+
+            ],
+            "paging": true,
+            "lengthChange": true,
+            // "searching": true,//是否允许Datatables开启本地搜索
+            "ordering": false,//是否允许Datatables开启排序
+            "info": true,//控制是否显示表格左下角的信息
+            "autoWidth": true,//自动宽度
+            "bProcessing": true, //DataTables载入数据时，是否显示‘进度’提示
+            "bScrollCollapse": true, //是否开启DataTables的高度自适应，当数据条数不够分页数据条数的时候，插件高度是否随数据条数而改变
+            "bPaginate": true, //是否显示（应用）分页器
+            "bInfo": true, //是否显示页脚信息，DataTables插件左下角显示记录数
+            "sPaginationType": "full_numbers", //详细分页组，可以支持直接跳转到某页
+            "sScrollX": "100%",
+            "scrollX": true,
+            "iDisplayLength": 10,//默认显示
+            "aLengthMenu": [10, 15, 20, 25, 50],//控制每页显示多少个
+            "oLanguage": oLanguageData,
+            "bServerSide": true,////指定服务端分页，必须的属性！
+            "sAjaxSource": "Index",
+            "fnServerParams": function (aoData) {
+                aoData.push({ "name": "nodeid", "value": $("#selnodeid option:selected").attr("value") });
+                aoData.push({ "name": "lastmaxid", "value": "-1" });
+                aoData.push({ "name": "commandstatus", "value": $("#selcommandstatus option:selected").attr("value") });
+                aoData.push({ "name": "commandqueuecreatetimerange", "value": $("#reservation").val() });
+                aoData.push({ "name": "commandid", "value": $("#selNodeNameList option:selected").attr("value") });
+                aoData.push({ "name": "taskid", "value": $("#seltaskid option:selected").attr("value") });
+                aoData.push({ "name": "commandqueueid", "value": $("#hidCommandQueueId").val() });
+            },
+            "fnServerData": function (sSource, aoData, fnCallback) {
+
+                $.ajax({
+                    "dataType": 'json',
+                    "type": "POST",
+                    "url": sSource,
+                    "data": aoData,
+                    "success": function (data) {
+                        if (data == null) {
+                            tbl.clear();
+                            return;
+                        }
+                        fnCallback(data);
+                    }
+                });
+            }
+
+        });
+        //点击查询
+        $("#btnSearchCommandQueue").click(function () {
+            $("#hidCommandQueueId").val("-1");
+            tbl.clear();
+            tbl.draw();
+        });
+
+
+    })
+</script>
+
+

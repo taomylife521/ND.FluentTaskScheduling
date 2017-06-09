@@ -1,0 +1,1 @@
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Command\obj\Debug\ND.FluentTaskScheduling.Command.csprojResolveAssemblyReference.cache

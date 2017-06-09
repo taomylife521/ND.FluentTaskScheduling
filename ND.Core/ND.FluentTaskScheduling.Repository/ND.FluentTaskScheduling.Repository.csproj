@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33E08DAA-2AA2-4AFE-A39C-C0A0D7BE7CBE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ND.FluentTaskScheduling.Repository</RootNamespace>
+    <AssemblyName>ND.FluentTaskScheduling.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\ND.NodeService\ND.FluentTaskScheduling.NodeService\dll\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\..\ND.NodeService\ND.FluentTaskScheduling.NodeService\dll\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\ND.NodeService\ND.FluentTaskScheduling.NodeService\dll\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="CommandLibDetailRepository.cs" />
+    <Compile Include="CommandLibRepository.cs" />
+    <Compile Include="CommandLogRepository.cs" />
+    <Compile Include="CommandQueueRepository.cs" />
+    <Compile Include="ErrorRepository.cs" />
+    <Compile Include="LogRepository.cs" />
+    <Compile Include="Models\TaskSchedulingDBContext.cs" />
+    <Compile Include="NodeMonitorRepository.cs" />
+    <Compile Include="NodePerformanceRepository.cs" />
+    <Compile Include="NodeRepository.cs" />
+    <Compile Include="PerformanceRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefreshCommandQueueLogRepository.cs" />
+    <Compile Include="TaskGroupRepository.cs" />
+    <Compile Include="TaskRepository.cs" />
+    <Compile Include="TaskLogRepository.cs" />
+    <Compile Include="TaskVersionRepository.cs" />
+    <Compile Include="TempDataRepository.cs" />
+    <Compile Include="UserRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ND.FluentTaskScheduling.Domain\ND.FluentTaskScheduling.Domain.csproj">
+      <Project>{3884c72b-76e4-4bcd-8f5f-e88c1d9fc029}</Project>
+      <Name>ND.FluentTaskScheduling.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ND.FluentTaskScheduling.Model\ND.FluentTaskScheduling.Model.csproj">
+      <Project>{0c7b7a04-473e-47df-b123-f9f26a131a23}</Project>
+      <Name>ND.FluentTaskScheduling.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ND.FluentTaskScheduling.TaskInterface\ND.FluentTaskScheduling.TaskInterface.csproj">
+      <Project>{58319e3b-65f1-49f4-a1c3-3c31e2bc6b8e}</Project>
+      <Name>ND.FluentTaskScheduling.TaskInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

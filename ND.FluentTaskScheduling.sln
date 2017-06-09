@@ -1,0 +1,126 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ND.Web", "ND.Web", "{43B396AF-5DAE-47FC-AADB-27B91A008BB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ND.Service", "ND.Service", "{A4F5C7C2-5341-4861-9D8A-9279F999A0E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ND.NodeService", "ND.NodeService", "{E1AD49E3-B4A2-4C16-BF01-5DEADF6CDA3D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ND.Core", "ND.Core", "{5DBD08DA-B59B-43FA-8D9E-B63F917DC3D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.WebApi", "ND.Service\ND.FluentTaskScheduling.WebApi\ND.FluentTaskScheduling.WebApi.csproj", "{D9BA6D89-F787-4813-AEA6-AB7116517941}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.NodeService", "ND.NodeService\ND.FluentTaskScheduling.NodeService\ND.FluentTaskScheduling.NodeService.csproj", "{D1CF87F1-9FA0-45FC-9C21-95ACF91E7E2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.Core", "ND.Core\ND.FluentTaskScheduling.Command\ND.FluentTaskScheduling.Core.csproj", "{1BE08159-4058-494B-B544-54FBC26C6D4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.Model", "ND.Core\ND.FluentTaskScheduling.Model\ND.FluentTaskScheduling.Model.csproj", "{0C7B7A04-473E-47DF-B123-F9F26A131A23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.Domain", "ND.Core\ND.FluentTaskScheduling.Domain\ND.FluentTaskScheduling.Domain.csproj", "{3884C72B-76E4-4BCD-8F5F-E88C1D9FC029}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.Repository", "ND.Core\ND.FluentTaskScheduling.Repository\ND.FluentTaskScheduling.Repository.csproj", "{33E08DAA-2AA2-4AFE-A39C-C0A0D7BE7CBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.Helper", "ND.Core\ND.FluentTaskScheduling.Helper\ND.FluentTaskScheduling.Helper.csproj", "{BDEBCC4E-DEF1-4F64-B5E3-315207AF78E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.TaskInterface", "ND.Core\ND.FluentTaskScheduling.TaskInterface\ND.FluentTaskScheduling.TaskInterface.csproj", "{58319E3B-65F1-49F4-A1C3-3C31E2BC6B8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ND.TaskDemo", "ND.TaskDemo", "{10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.TaskDemo", "ND.TaskDemo\ND.FluentTaskScheduling.TaskDemo\ND.FluentTaskScheduling.TaskDemo.csproj", "{831AE0F8-334F-43EE-99A8-87C8400B00B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.Web", "ND.Web\ND.FluentTaskScheduling.Web\ND.FluentTaskScheduling.Web.csproj", "{A4C790CA-BB0E-4295-960E-D369779804AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.AppDomainTestDemo", "ND.TaskDemo\ND.FluentTaskScheduling.AppDomainTestDemo\ND.FluentTaskScheduling.AppDomainTestDemo.csproj", "{AB8A8F8A-C5AC-4403-9C5B-63B7C20ABB73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.CrawlKeGui", "ND.TaskDemo\ND.FluentTaskScheduling.CrawlKeGui\ND.FluentTaskScheduling.CrawlKeGui.csproj", "{9F0D124C-EF25-4685-A960-698656228644}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.SystemMonitorTask", "ND.TaskDemo\ND.FluentTaskScheduling.SystemMonitorTask\ND.FluentTaskScheduling.SystemMonitorTask.csproj", "{B12FFEC5-9869-40D1-8A18-92FA32D0A918}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.AppDomainTask", "ND.TaskDemo\ND.FluentTaskScheduling.AppDomainTask\ND.FluentTaskScheduling.AppDomainTask.csproj", "{4924DA7B-A221-4EC6-83BF-77D1F9954DDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9BA6D89-F787-4813-AEA6-AB7116517941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9BA6D89-F787-4813-AEA6-AB7116517941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9BA6D89-F787-4813-AEA6-AB7116517941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9BA6D89-F787-4813-AEA6-AB7116517941}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1CF87F1-9FA0-45FC-9C21-95ACF91E7E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1CF87F1-9FA0-45FC-9C21-95ACF91E7E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1CF87F1-9FA0-45FC-9C21-95ACF91E7E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1CF87F1-9FA0-45FC-9C21-95ACF91E7E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BE08159-4058-494B-B544-54FBC26C6D4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BE08159-4058-494B-B544-54FBC26C6D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BE08159-4058-494B-B544-54FBC26C6D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BE08159-4058-494B-B544-54FBC26C6D4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C7B7A04-473E-47DF-B123-F9F26A131A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C7B7A04-473E-47DF-B123-F9F26A131A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C7B7A04-473E-47DF-B123-F9F26A131A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C7B7A04-473E-47DF-B123-F9F26A131A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3884C72B-76E4-4BCD-8F5F-E88C1D9FC029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3884C72B-76E4-4BCD-8F5F-E88C1D9FC029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3884C72B-76E4-4BCD-8F5F-E88C1D9FC029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3884C72B-76E4-4BCD-8F5F-E88C1D9FC029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33E08DAA-2AA2-4AFE-A39C-C0A0D7BE7CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33E08DAA-2AA2-4AFE-A39C-C0A0D7BE7CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33E08DAA-2AA2-4AFE-A39C-C0A0D7BE7CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33E08DAA-2AA2-4AFE-A39C-C0A0D7BE7CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDEBCC4E-DEF1-4F64-B5E3-315207AF78E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDEBCC4E-DEF1-4F64-B5E3-315207AF78E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDEBCC4E-DEF1-4F64-B5E3-315207AF78E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDEBCC4E-DEF1-4F64-B5E3-315207AF78E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58319E3B-65F1-49F4-A1C3-3C31E2BC6B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58319E3B-65F1-49F4-A1C3-3C31E2BC6B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58319E3B-65F1-49F4-A1C3-3C31E2BC6B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58319E3B-65F1-49F4-A1C3-3C31E2BC6B8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{831AE0F8-334F-43EE-99A8-87C8400B00B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{831AE0F8-334F-43EE-99A8-87C8400B00B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{831AE0F8-334F-43EE-99A8-87C8400B00B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{831AE0F8-334F-43EE-99A8-87C8400B00B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4C790CA-BB0E-4295-960E-D369779804AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4C790CA-BB0E-4295-960E-D369779804AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4C790CA-BB0E-4295-960E-D369779804AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4C790CA-BB0E-4295-960E-D369779804AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB8A8F8A-C5AC-4403-9C5B-63B7C20ABB73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB8A8F8A-C5AC-4403-9C5B-63B7C20ABB73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB8A8F8A-C5AC-4403-9C5B-63B7C20ABB73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB8A8F8A-C5AC-4403-9C5B-63B7C20ABB73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F0D124C-EF25-4685-A960-698656228644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F0D124C-EF25-4685-A960-698656228644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F0D124C-EF25-4685-A960-698656228644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F0D124C-EF25-4685-A960-698656228644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B12FFEC5-9869-40D1-8A18-92FA32D0A918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B12FFEC5-9869-40D1-8A18-92FA32D0A918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B12FFEC5-9869-40D1-8A18-92FA32D0A918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B12FFEC5-9869-40D1-8A18-92FA32D0A918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4924DA7B-A221-4EC6-83BF-77D1F9954DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4924DA7B-A221-4EC6-83BF-77D1F9954DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4924DA7B-A221-4EC6-83BF-77D1F9954DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4924DA7B-A221-4EC6-83BF-77D1F9954DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D9BA6D89-F787-4813-AEA6-AB7116517941} = {A4F5C7C2-5341-4861-9D8A-9279F999A0E1}
+		{D1CF87F1-9FA0-45FC-9C21-95ACF91E7E2B} = {E1AD49E3-B4A2-4C16-BF01-5DEADF6CDA3D}
+		{1BE08159-4058-494B-B544-54FBC26C6D4B} = {5DBD08DA-B59B-43FA-8D9E-B63F917DC3D2}
+		{0C7B7A04-473E-47DF-B123-F9F26A131A23} = {5DBD08DA-B59B-43FA-8D9E-B63F917DC3D2}
+		{3884C72B-76E4-4BCD-8F5F-E88C1D9FC029} = {5DBD08DA-B59B-43FA-8D9E-B63F917DC3D2}
+		{33E08DAA-2AA2-4AFE-A39C-C0A0D7BE7CBE} = {5DBD08DA-B59B-43FA-8D9E-B63F917DC3D2}
+		{BDEBCC4E-DEF1-4F64-B5E3-315207AF78E3} = {5DBD08DA-B59B-43FA-8D9E-B63F917DC3D2}
+		{58319E3B-65F1-49F4-A1C3-3C31E2BC6B8E} = {5DBD08DA-B59B-43FA-8D9E-B63F917DC3D2}
+		{831AE0F8-334F-43EE-99A8-87C8400B00B0} = {10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}
+		{A4C790CA-BB0E-4295-960E-D369779804AC} = {43B396AF-5DAE-47FC-AADB-27B91A008BB1}
+		{AB8A8F8A-C5AC-4403-9C5B-63B7C20ABB73} = {10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}
+		{9F0D124C-EF25-4685-A960-698656228644} = {10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}
+		{B12FFEC5-9869-40D1-8A18-92FA32D0A918} = {10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}
+		{4924DA7B-A221-4EC6-83BF-77D1F9954DDA} = {10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C7B7A04-473E-47DF-B123-F9F26A131A23}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ND.FluentTaskScheduling.Model</RootNamespace>
+    <AssemblyName>ND.FluentTaskScheduling.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentValidation, Version=6.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ND.Service\ND.FluentTaskScheduling.WebApi\bin\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ND.NodeService\ND.FluentTaskScheduling.NodeService\dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EmptyResponse.cs" />
+    <Compile Include="enums\CommandName.cs" />
+    <Compile Include="enums\EnumExtention.cs" />
+    <Compile Include="enums\MonitorStatus.cs" />
+    <Compile Include="enums\NodeStatus.cs" />
+    <Compile Include="enums\RefreshCommandQueueStatus.cs" />
+    <Compile Include="enums\ExecuteStatus.cs" />
+    <Compile Include="enums\RoleName.cs" />
+    <Compile Include="enums\TaskScheduleStatus.cs" />
+    <Compile Include="enums\TaskType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestBase.cs" />
+    <Compile Include="request\AddCommandExecuteLogRequest.cs" />
+    <Compile Include="request\AddCommandQueueItemRequest.cs" />
+    <Compile Include="request\AddLogRequest.cs" />
+    <Compile Include="request\AddNodeMonitorRequest.cs" />
+    <Compile Include="request\AddNodePerformanceRequest.cs" />
+    <Compile Include="request\AddNodeRequest.cs" />
+    <Compile Include="request\AddPerformanceRequest.cs" />
+    <Compile Include="request\AddTaskRequest.cs" />
+    <Compile Include="request\AddUserRequest.cs" />
+    <Compile Include="request\CheckUNameAndPwdRequest.cs" />
+    <Compile Include="request\LoadCommandQueueExecuteLogRequest.cs" />
+    <Compile Include="request\LoadNodeDetailRequest.cs" />
+    <Compile Include="request\LoadNodeListRequest.cs" />
+    <Compile Include="request\LoadNodeLogRequest.cs" />
+    <Compile Include="request\LoadNodeMonitorListRequest.cs" />
+    <Compile Include="request\LoadNodePerformancelistRequest.cs" />
+    <Compile Include="request\LoadPerformancelistRequest.cs" />
+    <Compile Include="request\LoadTaskExecuteLogRequest.cs" />
+    <Compile Include="request\LoadTaskIdListRequest.cs" />
+    <Compile Include="request\LoadTaskListRequest.cs" />
+    <Compile Include="request\LoadUserDetailRequest.cs" />
+    <Compile Include="request\LoadUserListRequest.cs" />
+    <Compile Include="request\LoadWebCommandListRequest.cs" />
+    <Compile Include="request\MonitorRequestBase.cs" />
+    <Compile Include="request\PlatformStatisRequest.cs" />
+    <Compile Include="request\UpdateNodeHeatbeatRequest.cs" />
+    <Compile Include="request\UpdateNodeInfoRequest.cs" />
+    <Compile Include="request\UpdateNodeMonitorRequest.cs" />
+    <Compile Include="request\UpdateTaskExecuteLogRequest.cs" />
+    <Compile Include="request\AddTaskExecuteLogRequest.cs" />
+    <Compile Include="request\LoadCommandListRequest.cs" />
+    <Compile Include="request\LoadCommandQueueListRequest.cs" />
+    <Compile Include="request\LoadNodeConfigRequest.cs" />
+    <Compile Include="request\LoadTaskVersionRequest.cs" />
+    <Compile Include="request\UpdateCommandQueueStatusRequest.cs" />
+    <Compile Include="request\UpdateNodeRefreshCommandQueueStatusRequest.cs" />
+    <Compile Include="request\UpdateNodeStatusRequest.cs" />
+    <Compile Include="request\UpdateTaskInfoRequest.cs" />
+    <Compile Include="request\UpdateTaskScheduleStatusRequest.cs" />
+    <Compile Include="request\UpdateUserRequest.cs" />
+    <Compile Include="request\validator\AddCommandExecuteLogRequestValidator.cs" />
+    <Compile Include="request\validator\AddTaskRequestValidator.cs" />
+    <Compile Include="request\validator\RegexValidator.cs" />
+    <Compile Include="request\validator\ValidatorBase.cs" />
+    <Compile Include="response\AddCommandQueueItemResponse.cs" />
+    <Compile Include="response\AddNodeResponse.cs" />
+    <Compile Include="response\AddTaskExecuteLogResponse.cs" />
+    <Compile Include="response\AddTaskResponse.cs" />
+    <Compile Include="response\AddUserResponse.cs" />
+    <Compile Include="response\CheckUNameAndPwdResponse.cs" />
+    <Compile Include="response\LoadCommandListResponse.cs" />
+    <Compile Include="response\LoadCommandQueueExecuteLogResponse.cs" />
+    <Compile Include="response\LoadCommandQueueListResponse.cs" />
+    <Compile Include="response\LoadNodeConfigResponse.cs" />
+    <Compile Include="ResponseBase.cs" />
+    <Compile Include="response\LoadNodeDetailResponse.cs" />
+    <Compile Include="response\LoadNodeListResponse.cs" />
+    <Compile Include="response\LoadNodeLogResponse.cs" />
+    <Compile Include="response\LoadNodePerformancelistResponse.cs" />
+    <Compile Include="response\LoadPerformancelistResponse.cs" />
+    <Compile Include="response\LoadTaskExecuteLogResponse.cs" />
+    <Compile Include="response\LoadTaskIdListResponse.cs" />
+    <Compile Include="response\LoadTaskListResponse.cs" />
+    <Compile Include="response\LoadTaskVersionResponse.cs" />
+    <Compile Include="response\LoadUserDetailResponse.cs" />
+    <Compile Include="response\PageInfoResponse.cs" />
+    <Compile Include="response\PlatformStatisResponse.cs" />
+    <Compile Include="response\UpdateTaskInfoResponse.cs" />
+    <Compile Include="RunCommandResult.cs" />
+    <Compile Include="tb_commandlib.cs" />
+    <Compile Include="tb_commandlibdetail.cs" />
+    <Compile Include="tb_commandlog.cs" />
+    <Compile Include="tb_commandqueue.cs" />
+    <Compile Include="tb_error.cs" />
+    <Compile Include="tb_nodemonitor.cs" />
+    <Compile Include="tb_nodeperformance.cs" />
+    <Compile Include="tb_refreshcommadqueuelog.cs" />
+    <Compile Include="tb_log.cs" />
+    <Compile Include="tb_node.cs" />
+    <Compile Include="tb_performance.cs" />
+    <Compile Include="tb_taskgroup.cs" />
+    <Compile Include="tb_tasklog.cs" />
+    <Compile Include="tb_tempdata.cs" />
+    <Compile Include="tb_user.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ND.FluentTaskScheduling.TaskInterface\ND.FluentTaskScheduling.TaskInterface.csproj">
+      <Project>{58319e3b-65f1-49f4-a1c3-3c31e2bc6b8e}</Project>
+      <Name>ND.FluentTaskScheduling.TaskInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

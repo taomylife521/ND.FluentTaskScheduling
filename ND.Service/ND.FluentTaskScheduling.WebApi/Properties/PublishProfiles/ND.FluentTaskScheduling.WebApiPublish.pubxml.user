@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\ND.Application\ND.FluentTaskScheduling\运维安装包\ND.FluentTaskScheduling.WebApiPublish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Autofac.dll">
+      <publishTime>04/07/2017 14:33:09</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.Mvc.dll">
+      <publishTime>05/17/2017 15:31:38</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.WebApi.dll">
+      <publishTime>04/07/2017 14:35:42</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>04/07/2017 11:08:06</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.Extended.dll">
+      <publishTime>04/07/2017 11:08:06</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>04/07/2017 11:08:06</publishTime>
+    </File>
+    <File Include="bin/FluentValidation.dll">
+      <publishTime>05/24/2017 15:08:45</publishTime>
+    </File>
+    <File Include="bin/FluentValidation.WebApi.dll">
+      <publishTime>05/24/2017 15:08:45</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>04/06/2017 17:05:47</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/07/2017 14:36:49</publishTime>
+    </File>
+    <File Include="bin/ND.FluentTaskScheduling.Domain.dll">
+      <publishTime>06/01/2017 15:05:12</publishTime>
+    </File>
+    <File Include="bin/ND.FluentTaskScheduling.Helper.dll">
+      <publishTime>06/01/2017 15:05:11</publishTime>
+    </File>
+    <File Include="bin/ND.FluentTaskScheduling.Model.dll">
+      <publishTime>06/01/2017 15:05:11</publishTime>
+    </File>
+    <File Include="bin/ND.FluentTaskScheduling.Repository.dll">
+      <publishTime>06/01/2017 15:05:12</publishTime>
+    </File>
+    <File Include="bin/ND.FluentTaskScheduling.TaskInterface.dll">
+      <publishTime>06/01/2017 15:05:11</publishTime>
+    </File>
+    <File Include="bin/ND.FluentTaskScheduling.WebApi.dll">
+      <publishTime>06/01/2017 15:05:13</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>04/06/2017 16:04:04</publishTime>
+    </File>
+    <File Include="bin/SharpCompress.dll">
+      <publishTime>04/13/2017 17:17:34</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>03/30/2017 14:04:23</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>05/17/2017 15:31:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>03/30/2017 14:04:23</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>03/30/2017 14:04:23</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>05/17/2017 15:31:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>05/17/2017 15:31:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>05/17/2017 15:31:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>05/17/2017 15:31:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>05/17/2017 15:31:38</publishTime>
+    </File>
+    <File Include="bin/WebApi.XML">
+      <publishTime>06/01/2017 15:05:13</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.Formatting.resources.dll">
+      <publishTime>03/30/2017 14:04:23</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.resources.dll">
+      <publishTime>03/30/2017 14:04:23</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.WebHost.resources.dll">
+      <publishTime>03/30/2017 14:04:23</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/30/2017 14:04:20</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/24/2017 15:08:49</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/01/2017 15:05:19</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

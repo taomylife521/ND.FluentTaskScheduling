@@ -1,0 +1,443 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分布式任务调度</title>
+    <!-- Bootstrap 3.3.6 -->
+    
+    <link href="~/adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    
+    
+    <!-- Ionicons -->
+    
+    @*<link href="~/adminlte/dist/css/font-awesome.min.css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    @*<link href="~/adminlte/dist/css/ionicons.min.css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Form Css -->
+    <link href="~/adminlte/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
+    
+    <link href="~/adminlte/plugins/datepicker/datepicker3.css" rel="stylesheet" />
+
+    <link href="~/adminlte/plugins/iCheck/all.css" rel="stylesheet" />
+    <link href="~/adminlte/plugins/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" />
+
+    <link href="~/adminlte/plugins/select2/select2.min.css" rel="stylesheet" />
+
+    <link href="~/adminlte/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link href="~/adminlte/dist/css/AdminLTE.min.css" rel="stylesheet" />
+    <link href="~/adminlte/dist/css/skins/_all-skins.min.css" rel="stylesheet" />
+
+    <link href="~/adminlte/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+   
+    
+    @*<link rel="stylesheet" href="style.css">*@
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+   
+    <link href="~/adminlte/plugins/tooltips/tipso.css" rel="stylesheet" />
+
+    
+    <!-- jQuery 2.2.3 -->
+    <script src="~/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="~/adminlte/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/adminlte/plugins/select2/select2.full.min.js"></script>
+    <script src="~/adminlte/plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="~/adminlte/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="~/adminlte/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+    <script src="~/adminlte/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="~/adminlte/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="~/adminlte/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="~/adminlte/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="~/adminlte/plugins/iCheck/icheck.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/adminlte/plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/adminlte/dist/js/app.min.js"></script>
+    <!-- SlimScroll 1.3.0 -->
+    <script src="~/adminlte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="~/adminlte/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="~/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="~/adminlte/plugins/tooltips/tipso.js"></script>
+    <script src="~/Scripts/Global.js"></script>
+    <script>
+        var oLanguageData = {
+            //国际化配置
+                "sProcessing": "正在获取数据，请稍后...",
+                "sLengthMenu": "显示 _MENU_ 条",
+                "sZeroRecords": "抱歉,没有您要搜索的内容!",
+                "sInfo": "从 _START_ 到  _END_ 条记录 总记录数为 _TOTAL_ 条",
+                "sInfoEmpty": "记录数为0",
+                "sInfoFiltered": "(全部记录数 _MAX_ 条)",
+                "sInfoPostFix": "",
+                "sSearch": "搜索",
+                "sUrl": "",
+                "oPaginate": {
+                    "sFirst": "第一页",
+                    "sPrevious": "上一页",
+                    "sNext": "下一页",
+                    "sLast": "最后一页"
+                },
+                "oAria": {
+                    "sSortAscending": ": 以升序排列此列",
+                    "sSortDescending": ": 以降序排列此列"
+                }
+            
+           
+        };
+    </script>
+    <style>
+        .hide{display:none}
+         .admin{color:#bb00f8}
+        .command{color:#bb00f8}
+        .task{color:#0a96e7}
+        .node{color:#f86e0d}
+        .nodestatus_0 {color:#CC0000}
+        .nodestatus_1 {color:#3333FF}
+        .refreshqueuestatus_0 {color:#CC0000}
+        .refreshqueuestatus_1 {color:#3333FF}
+        .schedulestatus_0{color:#FFCC99}
+        .schedulestatus_1{color:#FF9933}
+        .schedulestatus_2{color:#3333FF}
+        .schedulestatus_3{color:#004C99}
+        .schedulestatus_4{color:#CC0000}
+
+        .executestatus_0{color:#FF9933}
+        .executestatus_1{color:#3333FF}
+        .executestatus_2{color:#00CC00}
+        .executestatus_3{color:#CC0000}
+        .executestatus_4{color:#990000}
+        
+    </style>
+
+</head>
+<body class="skin-blue  hold-transition skin-blue sidebar-mini" data-spy="scroll" data-target="#scrollspy" style="height: auto;">
+    <div class="wrapper" style="height: auto;">
+        <!--导航-->
+        <header class="main-header">
+            <a href="../Home/Index" class="logo">
+                <!-- LOGO -->
+                分布式任务调度
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="user user-menu">
+                            <a href="javascript:void(0)">
+                                今天是:
+                                <script language=Javascript >
+                                    var day = "";
+                                    var month = "";
+                                    var ampm = "";
+                                    var ampmhour = "";
+                                    var myweekday = "";
+                                    var year = "";
+                                    mydate = new Date();
+                                    myweekday = mydate.getDay();
+                                    mymonth = mydate.getMonth() + 1;
+                                    myday = mydate.getDate();
+                                    myyear = mydate.getYear();
+                                    year = (myyear > 200) ? myyear : 1900 + myyear;
+                                    if (myweekday == 0)
+                                        weekday = " 星期日 ";
+                                    else if (myweekday == 1)
+                                        weekday = " 星期一 ";
+                                    else if (myweekday == 2)
+                                        weekday = " 星期二 ";
+                                    else if (myweekday == 3)
+                                        weekday = " 星期三 ";
+                                    else if (myweekday == 4)
+                                        weekday = " 星期四 ";
+                                    else if (myweekday == 5)
+                                        weekday = " 星期五 ";
+                                    else if (myweekday == 6)
+                                        weekday = " 星期六 ";
+                                    document.write(year + "年" + mymonth + "月" + myday + "日 " + weekday);
+                                </script>
+                            </a>
+                        </li>
+                        <li class="user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="~/Images/defaultheadimg.png" class="user-image" alt="User Image" />
+                                <span class="hidden-xs adminname">@(((ND.FluentTaskScheduling.Model.tb_user)HttpContext.Current.Session["LoginUserInfo"]).realname)</span>
+                            </a>
+                            
+
+                        </li>
+                        <li class="user user-menu"><a href="/Login/Logout" >
+    退出
+</a>
+                        </li>
+
+</ul>
+                </div>
+            </nav>
+        </header>
+
+        <!--左边侧边栏-->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="~/Images/defaultheadimg.png" class="img-circle" alt="User Image" />
+                    </div>
+                    <div class="pull-left info">
+                        <p class="adminname">@(((ND.FluentTaskScheduling.Model.tb_user)HttpContext.Current.Session["LoginUserInfo"]).realname)</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+                    </div>
+                </div>
+
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li class="header">主菜单栏</li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-dashboard"></i> <span>命令管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="../Command/Index"><i class="fa fa-th"></i>命令列表</a></li>
+                            <li><a href="../CommandQueue/Index"><i class="fa fa-th"></i>命令队列列表</a></li>
+                            <li><a href="../Log/CommandQueueExcuteLog"><i class="fa fa-th"></i>命令队列执行日志列表</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-database"></i> <span>任务管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li >
+                                <a href="../Task/Index">
+                                    <i class="fa fa-table"></i>任务列表
+                                </a>
+                            </li>
+                            <li ><a href="../Log/TaskExcuteLog"><i class="fa fa-table"></i>任务执行日志列表</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-server"></i> <span>节点管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="../Node/Index"><i class="fa fa-th"></i>节点列表</a></li>
+                            <li><a href="../NodeMonitor/Index"><i class="fa fa-th"></i>节点监控组件列表</a></li>
+                            <li><a href="../Log/NodeLog"><i class="fa fa-th"></i>节点日志列表</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>性能分析</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="../Performance/TaskIndex"><i class="fa fa-bar-chart"></i>任务性能分析</a></li>
+                            <li><a href="../Performance/NodeIndex"><i class="fa fa-bar-chart-o"></i>节点性能分析</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-bar-chart"></i>
+                            <span>数据统计</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="layout/top-nav.html"><i class="fa fa-line-chart"></i>任务执行度统计</a></li>
+                            <li><a href="layout/boxed.html"><i class="fa fa-area-chart"></i>命令执行度统计</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-user"></i>
+                            <span>用户管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="fa fa-user"><a href="../Admin/Index"><i class="fa fa-users"></i> 用户列表</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-video-camera"></i>
+                            <span>平台更新管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="fa "><a href="../Platform/Index"><i class="fa fa-arrows-v"></i>平台更新时间列表</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!--中间内容部分-->
+        <div class="content-wrapper">
+            @RenderBody()
+        </div>
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.0
+            </div>
+            <strong>Copyright &copy; 2017-2017 <a href="http://almsaeedstudio.com">Mr Tao</a>.</strong> All rights
+            reserved.
+        </footer>
+
+
+    </div>
+</body>
+</html>
+
+<script>
+
+    $(function () {
+        var BaseUrl = "http://localhost:21794/api/";
+        $(".select2").select2();
+      
+        //Datemask dd/mm/yyyy
+        //$("#datemask").inputmask("yyyy-mm-dd", { "placeholder": "yyyy-mm-dd" });
+        //Datemask2 mm/dd/yyyy
+       // $("#datemask2").inputmask("yyyy-mm-dd", { "placeholder": "yyyy-mm-dd" });
+        //Money Euro
+        //$("[data-mask]").inputmask();
+
+
+        //$('.table').DataTable({
+        //    "paging": true,
+        //    "lengthChange": true,
+        //    "searching": true,//是否允许Datatables开启本地搜索
+        //    "ordering": true,//是否允许Datatables开启排序
+        //    "info": true,//控制是否显示表格左下角的信息
+        //    "autoWidth": false,//自动宽度
+        //    "bProcessing": true, //DataTables载入数据时，是否显示‘进度’提示
+        //    "bScrollCollapse": true, //是否开启DataTables的高度自适应，当数据条数不够分页数据条数的时候，插件高度是否随数据条数而改变
+        //    "bPaginate": true, //是否显示（应用）分页器
+        //    "bInfo": true, //是否显示页脚信息，DataTables插件左下角显示记录数
+        //    "sPaginationType": "full_numbers", //详细分页组，可以支持直接跳转到某页
+        //    "sScrollX": "100%",
+        //    "scrollX": true,
+        //    "iDisplayLength": 10,//默认显示  
+        //    "aLengthMenu": [1, 2, 10, 25, 50],//控制每页显示多少个
+        //    "oLanguage": { //国际化配置
+        //        "sProcessing": "正在获取数据，请稍后...",
+        //        "sLengthMenu": "显示 _MENU_ 条",
+        //        "sZeroRecords": "抱歉,没有您要搜索的内容!",
+        //        "sInfo": "从 _START_ 到  _END_ 条记录 总记录数为 _TOTAL_ 条",
+        //        "sInfoEmpty": "记录数为0",
+        //        "sInfoFiltered": "(全部记录数 _MAX_ 条)",
+        //        "sInfoPostFix": "",
+        //        "sSearch": "搜索",
+        //        "sUrl": "",
+        //        "oPaginate": {
+        //            "sFirst": "第一页",
+        //            "sPrevious": "上一页",
+        //            "sNext": "下一页",
+        //            "sLast": "最后一页"
+        //        }
+        //    },
+
+
+
+        //});
+
+        $('#reservation').daterangepicker(
+            {
+                applyClass: 'btn-sm btn-success',
+                cancelClass: 'btn-sm btn-default',
+                locale: {
+                    applyLabel: '确认',
+                    cancelLabel: '取消',
+                    fromLabel: '起始时间',
+                    toLabel: '结束时间',
+                    customRangeLabel: '自定义',
+                    firstDay: 1,
+                    format: 'YYYY-MM-DD',
+                    separator: '/',
+                },
+                maxDate: moment(), //最大时间
+                startDate: moment().subtract(3, 'month'),
+                endDate: moment(),
+                ranges: {
+                    '今天': [moment(), moment()],
+                    '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    '最近7天': [moment().subtract(6, 'days'), moment()],
+                    '最近30天': [moment().subtract(29, 'days'), moment()],
+                    '最近三个月': [moment().subtract(3, 'month').startOf('month'), moment()]
+                },
+              
+               // format: 'YYYY-MM-DD'
+            }
+        );
+
+        InitMenuCheck();
+
+        
+    })
+
+    function InitMenuCheck()
+    {
+      
+        $(".sidebar-menu .treeview-menu a").each(function () {
+            
+            if(location.href.indexOf($(this).attr("href").replace("..","")) > -1)
+            {
+                $(this).parent().addClass("active");
+                $(this).parent().parent().parent().addClass("active");
+            }
+        });
+    }
+</script>
+
+@*<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>*@
+@*<script src="docs.js"></script>*@

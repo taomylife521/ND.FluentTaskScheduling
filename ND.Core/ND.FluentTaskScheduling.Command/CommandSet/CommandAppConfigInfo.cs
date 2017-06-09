@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Threading.Tasks;
+
+//**********************************************************************
+//
+// 文件名称(File Name)：CommandAppConfigInfo.CS        
+// 功能描述(Description)：     
+// 作者(Author)：Aministrator               
+// 日期(Create Date)： 2017-04-05 11:04:28         
+//
+// 修改记录(Revision History)： 
+//       R1:
+//             修改作者:          
+//             修改日期:2017-04-05 11:04:28          
+//             修改理由：         
+//**********************************************************************
+namespace ND.FluentTaskScheduling.Core.CommandSet
+{
+    /// <summary>
+    /// 命令配置信息，类似app.config中的配置，仅支持字典
+    /// 正式环境在任务调度平台中配置获取
+    /// 测试环境需要自己重新创建实例赋值
+    /// </summary>
+     [Serializable]
+   public class CommandAppConfigInfo : Dictionary<string, string>
+    {
+          public CommandAppConfigInfo():base()
+        { }
+
+        //父类实现了ISerializable接口的，子类也必须有序列化构造函数，否则反序列化时会出错。
+          protected CommandAppConfigInfo(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+        }
+ 
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+    }
+}

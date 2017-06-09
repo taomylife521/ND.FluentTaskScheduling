@@ -1,0 +1,161 @@
+﻿
+@using ND.FluentTaskScheduling.Model.enums
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    var tbl;
+    $(function () {
+        tbl = $('#tbCommandList').DataTable({
+            //"bFilter": true, //过滤功能
+            "aoColumns": [
+
+              { "bSortable": true, "data": "id" },//编号
+                {
+                    "mRender": function (mData, type, full) {
+                        var html = [];
+                        html.push("<span class=\"command\">" + full.commandname + "</span>")
+                        return html.join('');
+                    }
+                },
+
+                { "bSortable": true, "data": "commanddescription" },
+                { "bSortable": true, "data": "commandnamespace" },
+                { "bSortable": true, "data": "commandmainclassname" },
+                { "bSortable": true, "data": "commandparams" },
+                { "bSortable": true, "data": "createby" },
+                { "bSortable": true, "data": "createtime" },
+               {
+                   "bSortable": true,
+                   "mRender": function (mData, type, full) {
+                       var html = [];
+                       html.push("<a class=\"btn margin-r-5  btn-sm  btn-primary\"  hdt=\"btnloadexecutelog\">编辑</a>");
+                       return html.join('');
+                   }
+               },
+
+            ],
+            "paging": true,
+            "lengthChange": true,
+            // "searching": true,//是否允许Datatables开启本地搜索
+            "ordering": false,//是否允许Datatables开启排序
+            "info": true,//控制是否显示表格左下角的信息
+            "autoWidth": true,//自动宽度
+            "bProcessing": true, //DataTables载入数据时，是否显示‘进度’提示
+            "bScrollCollapse": true, //是否开启DataTables的高度自适应，当数据条数不够分页数据条数的时候，插件高度是否随数据条数而改变
+            "bPaginate": true, //是否显示（应用）分页器
+            "bInfo": true, //是否显示页脚信息，DataTables插件左下角显示记录数
+            "sPaginationType": "full_numbers", //详细分页组，可以支持直接跳转到某页
+            // "sScrollX": "100%",
+            //"scrollX": true,
+            "iDisplayLength": 20,//默认显示
+            "aLengthMenu": [10, 15, 20, 25, 50],//控制每页显示多少个
+            "oLanguage": oLanguageData,
+            "bServerSide": true,////指定服务端分页，必须的属性！
+            "sAjaxSource": "Index",
+            "fnServerParams": function (aoData) {
+                aoData.push({ "name": "CommandId", "value": '@ViewBag.commandid' });
+            },
+            "fnServerData": function (sSource, aoData, fnCallback) {
+
+                $.ajax({
+                    "dataType": 'json',
+                    "type": "POST",
+                    "url": sSource,
+                    "data": aoData,
+                    "success": function (data) {
+                        if (data == null) {
+                            tbl.clear();
+                            return;
+                        }
+                        fnCallback(data);
+                    }
+                });
+            }
+
+        });
+       
+
+
+    })
+</script>
+
+
+
+<section class="content-header">
+    <h1>
+        命令列表
+        <small>命令列表</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 命令管理</a></li>
+        <li><a href="#">命令列表</a></li>
+    </ol>
+</section>
+
+
+<section class="content">
+    <!--查询条件-->
+    
+
+
+
+    <div class="box box-default">
+        <!--任务列表-->
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">命令展示列表</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="tbCommandList" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>命令编号</th>
+                                    <th>命令名称</th>
+                                    <th>命令描述</th>
+                                    <th>命令命名空间</th>
+                                    <th>命令类名</th>
+                                    <th>命令参数</th>
+                                    <th>创建人</th>
+                                    <th>创建时间</th>
+                                    <th>操作</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @*@foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <td>@item.commandname</td>
+                                        <td>
+                                            @item.commanddescription
+                                        </td>
+                                        <td>@item.commandnamespace</td>
+                                        <td>@item.commandmainclassname</td>
+                                        <td>@item.commandparams</td>
+                                        <td>@item.createby</td>
+                                        <td>@item.createtime</td>
+                                       
+                                    </tr>
+                                }*@
+
+
+                            </tbody>
+                            <tfoot>
+
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

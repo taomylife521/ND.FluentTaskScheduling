@@ -1,0 +1,4 @@
+D:\ND.Application\ND.FluentTaskScheduling\ND.Service\ND.FluentTaskScheduling.ApiModel\bin\Debug\ND.FluentTaskScheduling.ApiModel.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Service\ND.FluentTaskScheduling.ApiModel\bin\Debug\ND.FluentTaskScheduling.ApiModel.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.Service\ND.FluentTaskScheduling.ApiModel\obj\Debug\ND.FluentTaskScheduling.ApiModel.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Service\ND.FluentTaskScheduling.ApiModel\obj\Debug\ND.FluentTaskScheduling.ApiModel.pdb

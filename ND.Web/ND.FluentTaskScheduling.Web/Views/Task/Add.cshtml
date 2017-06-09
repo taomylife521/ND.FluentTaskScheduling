@@ -1,0 +1,198 @@
+﻿@model ND.FluentTaskScheduling.Model.request.AddTaskRequest
+@using ND.FluentTaskScheduling.Model.response
+@using ND.FluentTaskScheduling.Model;
+@using ND.FluentTaskScheduling.Model.enums
+@{
+    ViewBag.Title = "添加任务";
+    List<NodeDetailDto> nodelist = ViewBag.NodeList as List<NodeDetailDto>;
+    List<tb_user> userlist = ViewBag.UserList as List<tb_user>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content-header">
+    <h1>
+       添加任务
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 任务管理</a></li>
+        <li><a href="#">添加任务</a></li>
+    </ol>
+</section>
+
+@using (Html.BeginForm("Add", "Task", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+
+
+        <div class="box box-primary col-md-6 pull-right">
+            <div class="box-body">
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <label>任务名称:</label>
+                        <input type="text"  name="TaskName" class="form-control" placeholder="任务名称:测试任务">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label>任务命名空间:</label>
+                        <input type="text" class="form-control" name="TaskNameSpace" placeholder="任务命名空间:ND.FluentTaskScheduling.TaskDemo">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label>任务类名:</label>
+                        <input type="text" class="form-control" name="TaskMainClassName" placeholder="任务类名:ND.FluentTaskScheduling.TaskDemo.DemoTask">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label>任务节点</label>
+                        <select class="form-control select2" name="NodeId" data-placeholder="任务节点">
+                            @for (int i = 0; i < nodelist.Count; i++)
+                            {
+                                <option value="@nodelist[i].NodeDetail.id">@nodelist[i].NodeDetail.nodename</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>任务描述:</label>
+                        <textarea class="form-control" name="TaskDescription" rows="3" placeholder="任务描述"></textarea>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label>任务参数:</label>
+                        <textarea class="form-control" name="TaskParams" rows="3" placeholder="任务参数：{aa:123}"></textarea>
+                    </div>
+                </div>
+
+                
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>任务dll压缩包名称:</label>
+                        <input type="text" class="form-control" name="TaskDllFileName" placeholder="任务dll压缩包名称：ND.FluentTaskScheduling.TaskDemo.rar">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label>上传任务压缩包:</label>
+                        <input type="file" class="form-control" name="TaskDllStream" placeholder="任务dll压缩包名称">
+                    </div>
+                </div>
+
+               
+
+              
+
+                <div class="row">
+
+                    <div class="form-group col-md-6">
+                        <label>任务备注:</label>
+                        <textarea class="form-control" name="TaskRemark" rows="3" placeholder="任务备注"></textarea>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <div class="form-group">
+                            <label>任务类型:</label><br/>
+                            @foreach (var o in (ND.FluentTaskScheduling.Helper.EnumHelper<ND.FluentTaskScheduling.Model.enums.TaskType>.GetAllEnumsOfList2()))
+                            {
+                                <label class="margin-r-5">
+                                    <input type="radio" name="TaskType"  @(((int)TaskType.SchedulingTask).ToString() == o.Value ? "checked=''checked" : "") value="@o.Value" class="flat-red">&nbsp&nbsp<span>@o.Text</span>
+                                </label>
+                            }
+                        </div>
+
+                        <div class="tasktypebox">
+                            <div class="form-group">
+                                @*<label>任务Corn表达式:</label>*@
+                                <input type="text" class="form-control" name="TaskCorn" placeholder="任务Corn表达式(每5秒执行一次):0/5 * * * * ?">
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="isenabledAlarm" name="IsEnabledAlarm" checked="checked" class="flat-red">&nbsp&nbsp是否启用报警<br />
+                            </label>
+                        </div>
+                        <div class="alarmbox">
+                            <div class="form-group">
+                                @foreach (var o in (ND.FluentTaskScheduling.Helper.EnumHelper<ND.FluentTaskScheduling.Helper.AlarmType>.GetAllEnumsOfList2()))
+                                {
+                                    <label class="margin-r-5">
+                                        <input type="radio" name="AlarmType" @("0" == o.Value ? "checked=''checked" : "") value="@o.Value" class="flat-red">&nbsp&nbsp<span>@o.Text</span>
+                                    </label>
+                                }
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    报警人
+                                    <select id="selalarmlist" class="form-control select2" name="AlarmUserId" multiple="multiple" data-placeholder="选择报警人" style="width: 100%;">
+                                        @for (int i = 0; i < userlist.Count; i++)
+                                        {
+                                            <option value="@userlist[i].id">@userlist[i].realname.ToString()</option>
+                                        }
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+               
+
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        
+                        <a href="../Task/Index" class="btn pull-right">返回列表</a>
+                        <button type="submit" class="btn margin-r-5 btn-primary pull-right">保存</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+}
+
+
+<script>
+
+    $(function () {
+        $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        });
+
+
+        $('#isenabledAlarm').on('ifChecked', function (event) {
+            $(".alarmbox").show();
+        });
+        $('#isenabledAlarm').on('ifUnchecked', function (event) {
+            $(".alarmbox").hide();
+        });
+        $('input[name=TaskType]').on('ifChecked', function (event) {
+            if ($(this).val() == '@((int)TaskType.SchedulingTask)')
+            {
+                $(".tasktypebox").show();
+            }
+            else
+            {
+                $(".tasktypebox").hide();
+            }
+           
+        });
+       
+
+
+
+
+    })
+</script>

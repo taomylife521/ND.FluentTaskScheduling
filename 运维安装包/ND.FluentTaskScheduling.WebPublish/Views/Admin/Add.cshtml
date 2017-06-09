@@ -1,0 +1,87 @@
+﻿@model ND.FluentTaskScheduling.Model.tb_user
+@using ND.FluentTaskScheduling.Model;
+@{
+    ViewBag.Title = "添加用户";
+    List<tb_user> userlist = ViewBag.UserList as List<tb_user>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="content-header">
+    <h1>
+        添加用户
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 用户管理</a></li>
+        <li><a href="#">添加用户</a></li>
+    </ol>
+</section>
+
+
+@using (Html.BeginForm("Add", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+
+
+        <div class="box box-primary col-md-6 pull-right">
+            <div class="box-body">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>姓名:</label>
+                        <input type="text" name="UserRealName" class="form-control" placeholder="姓名">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>密码</label>
+                        <input type="password" name="UserPassword" class="form-control" placeholder="密码">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>角色名称:</label>
+                        <select class="form-control select2" name="Role" id="selrole">
+                            <option value="-1">全部</option>
+                            @foreach (var o in (ND.FluentTaskScheduling.Helper.EnumHelper<ND.FluentTaskScheduling.Model.enums.RoleName>.GetAllEnumsOfList2()))
+                            {
+                                <option value="@o.Value" @(((int)ND.FluentTaskScheduling.Model.enums.RoleName.Developer + "") == o.Value ? "selected='selected'" : "")>@o.Text</option>
+                            }
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>手机号:</label>
+                        <input type="text" name="UserMobile" class="form-control" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" placeholder="手机号">
+                    </div>
+                </div>
+               
+            
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>邮箱:</label>
+                        <input type="text" class="form-control" value="" name="UserEmail" placeholder="邮箱">
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <a href="/Admin/Index" class="btn pull-right">返回列表</a>
+                        <button type="submit" class="btn margin-r-5 btn-primary pull-right">保存</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+}
+

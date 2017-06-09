@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BE08159-4058-494B-B544-54FBC26C6D4B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ND.FluentTaskScheduling.Core</RootNamespace>
+    <AssemblyName>ND.FluentTaskScheduling.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ND.NodeService\ND.FluentTaskScheduling.NodeService\dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\..\ND.NodeService\ND.FluentTaskScheduling.NodeService\dll\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="asyncrequest\LogProxy.cs" />
+    <Compile Include="asyncrequest\NodeProxy.cs" />
+    <Compile Include="asyncrequest\ProxyUrl.cs" />
+    <Compile Include="CommandHandler\AbsCommandQueueScan.cs" />
+    <Compile Include="CommandHandler\CommandParams.cs" />
+    <Compile Include="CommandHandler\CommandQueueScanManger.cs" />
+    <Compile Include="CommandHandler\DbCommandQueueScan.cs" />
+    <Compile Include="CommandSet\AbstractCommand.cs" />
+    <Compile Include="CommandSet\CommandAppConfigInfo.cs" />
+    <Compile Include="CommandHandler\CommandEventArgs.cs" />
+    <Compile Include="CommandHandler\CommandPoolBuilder.cs" />
+    <Compile Include="CommandHandler\CommandFactory.cs" />
+    <Compile Include="CommandHandler\CommandPoolManager.cs" />
+    <Compile Include="CommandHandler\CommandRunTimeInfo.cs" />
+    <Compile Include="CommandHandler\ICommandPoolBuilder.cs" />
+    <Compile Include="CommandHandler\ICommandQueueScan.cs" />
+    <Compile Include="CommandSet\PauseSchduleTaskCommand.cs" />
+    <Compile Include="CommandSet\RecoverScheduleTaskCommand.cs" />
+    <Compile Include="CommandSet\RestartNodeCommand.cs" />
+    <Compile Include="CommandSet\StartRefreshCommandQueueNodeCommand.cs" />
+    <Compile Include="CommandSet\StopNodeCommand.cs" />
+    <Compile Include="CommandSet\StopRefreshCommandQueueNodeCommand.cs" />
+    <Compile Include="CommandSet\StopTaskCommand.cs" />
+    <Compile Include="Corn\AbsCorn.cs" />
+    <Compile Include="Corn\CornFactory.cs" />
+    <Compile Include="Corn\CustomCornFactory.cs" />
+    <Compile Include="Corn\RunOnceCorn.cs" />
+    <Compile Include="Corn\SimpleCorn.cs" />
+    <Compile Include="GlobalNodeConfig.cs" />
+    <Compile Include="Monitor\AbsMonitor.cs" />
+    <Compile Include="Monitor\NodeHeartBeatMonitor.cs" />
+    <Compile Include="Monitor\NodeListenComandQueueMonitor.cs" />
+    <Compile Include="Monitor\NodeTaskSchedulingMonitor.cs" />
+    <Compile Include="Monitor\TimingGcCollectMonitor.cs" />
+    <Compile Include="PerformanceCollect\AbsCollect.cs" />
+    <Compile Include="PerformanceCollect\ICollect.cs" />
+    <Compile Include="PerformanceCollect\NodePerformanceCollectConfig.cs" />
+    <Compile Include="Monitor\NodePerformanceMonitor.cs" />
+    <Compile Include="PerformanceCollect\PerformanceCounterCollectTask.cs" />
+    <Compile Include="Monitor\TaskPerformanceMonitor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CommandSet\StartTaskCommand.cs" />
+    <Compile Include="TaskHandler\AbstractTaskExtentions.cs" />
+    <Compile Include="TaskHandler\TaskDisposer.cs" />
+    <Compile Include="TaskManagerNodeService.cs" />
+    <Compile Include="TaskHandler\NodeTaskRunTimeInfo.cs" />
+    <Compile Include="CommandHandler\ScanCommandEventArgs.cs" />
+    <Compile Include="TaskHandler\TaskFactory.cs" />
+    <Compile Include="TaskHandler\TaskJob.cs" />
+    <Compile Include="TaskHandler\TaskLock.cs" />
+    <Compile Include="CommandHandler\CommandHandlerExecutor.cs" />
+    <Compile Include="TaskHandler\TaskPoolManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ND.FluentTaskScheduling.Helper\ND.FluentTaskScheduling.Helper.csproj">
+      <Project>{bdebcc4e-def1-4f64-b5e3-315207af78e3}</Project>
+      <Name>ND.FluentTaskScheduling.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ND.FluentTaskScheduling.Model\ND.FluentTaskScheduling.Model.csproj">
+      <Project>{0c7b7a04-473e-47df-b123-f9f26a131a23}</Project>
+      <Name>ND.FluentTaskScheduling.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ND.FluentTaskScheduling.TaskInterface\ND.FluentTaskScheduling.TaskInterface.csproj">
+      <Project>{58319e3b-65f1-49f4-a1c3-3c31e2bc6b8e}</Project>
+      <Name>ND.FluentTaskScheduling.TaskInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

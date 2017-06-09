@@ -1,0 +1,6 @@
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Helper\bin\Debug\ND.FluentTaskScheduling.Helper.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Helper\bin\Debug\ND.FluentTaskScheduling.Helper.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Helper\bin\Debug\Newtonsoft.Json.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Helper\obj\Debug\ND.FluentTaskScheduling.Helper.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Helper\obj\Debug\ND.FluentTaskScheduling.Helper.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Helper\bin\Debug\SharpCompress.dll

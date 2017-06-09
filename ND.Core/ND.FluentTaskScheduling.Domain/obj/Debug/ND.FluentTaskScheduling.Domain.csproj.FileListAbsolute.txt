@@ -1,0 +1,10 @@
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Debug\ND.FluentTaskScheduling.Domain.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Debug\ND.FluentTaskScheduling.Domain.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Debug\ND.FluentTaskScheduling.Model.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Debug\ND.FluentTaskScheduling.Model.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\obj\Debug\ND.FluentTaskScheduling.Domain.csprojResolveAssemblyReference.cache
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\obj\Debug\ND.FluentTaskScheduling.Domain.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\obj\Debug\ND.FluentTaskScheduling.Domain.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Debug\Newtonsoft.Json.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Debug\ND.FluentTaskScheduling.TaskInterface.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Debug\ND.FluentTaskScheduling.TaskInterface.pdb
