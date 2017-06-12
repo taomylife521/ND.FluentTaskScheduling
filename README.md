@@ -7,6 +7,8 @@
 
 #分布式调度平台架构#
 ![整体架构图](http://files.cnblogs.com/files/taomylife/%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.gif)
+![整体架构图](http://files.cnblogs.com/files/taomylife/%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E7%8A%B6%E6%80%81%E5%9B%BE.gif)
+
 以上的分层，每个层代表一个项目,其中
 
 
