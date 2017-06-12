@@ -81,6 +81,8 @@
     <Compile Include="Corn\SimpleCorn.cs" />
     <Compile Include="GlobalNodeConfig.cs" />
     <Compile Include="Monitor\AbsMonitor.cs" />
+    <Compile Include="Monitor\MonitorPoolManager.cs" />
+    <Compile Include="Monitor\MonitorRunTimeInfo.cs" />
     <Compile Include="Monitor\NodeHeartBeatMonitor.cs" />
     <Compile Include="Monitor\NodeListenComandQueueMonitor.cs" />
     <Compile Include="Monitor\NodeTaskSchedulingMonitor.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="Monitor\TaskPerformanceMonitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommandSet\StartTaskCommand.cs" />
+    <Compile Include="SchedulerComponent\ISchedulerComponent.cs" />
     <Compile Include="TaskHandler\AbstractTaskExtentions.cs" />
     <Compile Include="TaskHandler\TaskDisposer.cs" />
     <Compile Include="TaskManagerNodeService.cs" />

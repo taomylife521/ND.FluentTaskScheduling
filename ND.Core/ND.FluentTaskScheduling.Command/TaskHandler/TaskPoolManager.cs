@@ -101,10 +101,14 @@ namespace ND.FluentTaskScheduling.Core.TaskHandler
         /// <returns></returns>
         public bool UpdateTaskSchduleStatus(string taskid, TaskScheduleStatus status)
         {
-           if (TaskRuntimePool.ContainsKey(taskid))
+            lock (_locktag)
             {
-               TaskRuntimePool[taskid].TaskModel.ispauseschedule = status == TaskScheduleStatus.PauseSchedule?1:0;
-                TaskRuntimePool[taskid].TaskModel.taskschedulestatus = (int)status;
+                if (TaskRuntimePool.ContainsKey(taskid))
+                {
+                    TaskRuntimePool[taskid].TaskModel.ispauseschedule =
+                        status == TaskScheduleStatus.PauseSchedule ? 1 : 0;
+                    TaskRuntimePool[taskid].TaskModel.taskschedulestatus = (int) status;
+                }
             }
             //bool flag =Remove(taskid);
             //if (!flag)
@@ -128,7 +132,7 @@ namespace ND.FluentTaskScheduling.Core.TaskHandler
                 if (TaskRuntimePool.ContainsKey(taskid))
                 {
                     var taskruntimeinfo = TaskRuntimePool[taskid];
-                    _sched.PauseTrigger(taskruntimeinfo.TaskModel.id.ToString(), taskruntimeinfo.TaskModel.groupid.ToString());// 停止触发器  
+                    _sched.PauseTrigger(taskruntimeinfo.TaskModel.id.ToString(), taskruntimeinfo.TaskModel.groupid.ToString());// 停止触发器   
                     _sched.UnscheduleJob(taskruntimeinfo.TaskModel.id.ToString(), taskruntimeinfo.TaskModel.groupid.ToString());// 移除触发器  
                     _sched.DeleteJob(taskruntimeinfo.TaskModel.id.ToString(), taskruntimeinfo.TaskModel.groupid.ToString());// 删除任务
 
@@ -145,12 +149,13 @@ namespace ND.FluentTaskScheduling.Core.TaskHandler
         /// <returns></returns>
         public NodeTaskRunTimeInfo Get(string taskid)
         {
-            if (!TaskRuntimePool.ContainsKey(taskid))
-            {
-                return null;
-            }
+            
             lock (_locktag)
             {
+                if (!TaskRuntimePool.ContainsKey(taskid))
+                {
+                    return null;
+                }
                 if (TaskRuntimePool.ContainsKey(taskid))
                 {
                     return TaskRuntimePool[taskid];

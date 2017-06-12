@@ -29,7 +29,7 @@ namespace ND.FluentTaskScheduling.Core.Monitor
     /// </summary>
     public class TimingGcCollectMonitor : AbsMonitor
     {
-        public override int Interval { get { return 1000*60*10; } }
+        public override int Interval { get { return 1000*60*60*5; } }
         public override string Name {
             get { return "定时进行GC收集"; }
         }
@@ -40,7 +40,6 @@ namespace ND.FluentTaskScheduling.Core.Monitor
 
         protected override void Run()
         {
-            //throw new NotImplementedException();
             try
             {
                 StringBuilder strDis = new StringBuilder();
