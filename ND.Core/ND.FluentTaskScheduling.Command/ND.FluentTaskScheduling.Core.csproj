@@ -95,7 +95,6 @@
     <Compile Include="Monitor\TaskPerformanceMonitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommandSet\StartTaskCommand.cs" />
-    <Compile Include="SchedulerComponent\ISchedulerComponent.cs" />
     <Compile Include="TaskHandler\AbstractTaskExtentions.cs" />
     <Compile Include="TaskHandler\TaskDisposer.cs" />
     <Compile Include="TaskManagerNodeService.cs" />
