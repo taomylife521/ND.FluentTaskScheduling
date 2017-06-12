@@ -74,15 +74,21 @@ namespace ND.FluentTaskScheduling.WebApi.Monitor
                             if (totalsecond > (20+x.interval/1000) || totalsecond < 0)//大于10s 说明心跳不正常
                             {
                                 nodemonitorRep.UpdateById(new List<int>() { x.id }, new Dictionary<string, string>() { { "monitorstatus", ((int)NodeStatus.NoRun).ToString() } });//, { "refreshcommandqueuestatus", ((int)RefreshCommandQueueStatus.NoRefresh).ToString() }
-                               
-                                string title = "节点(编号):" + node.nodename + "(" + x.nodeid.ToString() + "),监控组件:"+x.classname+",心跳异常,已自动更新为未监控状态,请及时处理该节点下该监控组件!";
-                                StringBuilder strContent = new StringBuilder();
-                                strContent.AppendLine("节点(编号):" + node.nodename + "(" + node.id.ToString() + ")<br/>");
-                                strContent.AppendLine("节点监控组件名称(编号):" + x.name + "(" + x.id.ToString() + ")<br/>");
-                                strContent.AppendLine("节点监控组件描述:" + x.discription + "<br/>");
-                                strContent.AppendLine("节点监控类名,命名空间:" + x.classname + "," + x.classnamespace.ToString() + "<br/>");
-                                strContent.AppendLine("节点监控组件最后一次心跳时间:" + x.lastmonitortime + "<br/>");
-                                AlarmHelper.AlarmAsync(node.isenablealarm, (AlarmType)node.alarmtype, alaramperson, title, strContent.ToString());
+                                if (node.nodestatus != (int) NodeStatus.NoRun)
+                                {
+                                    string title = "节点(编号):" + node.nodename + "(" + x.nodeid.ToString() + "),监控组件:" +
+                                                   x.classname + ",心跳异常,已自动更新为未监控状态,请及时处理该节点下该监控组件!";
+                                    StringBuilder strContent = new StringBuilder();
+                                    strContent.AppendLine("节点(编号):" + node.nodename + "(" + node.id.ToString() +
+                                                          ")<br/>");
+                                    strContent.AppendLine("节点监控组件名称(编号):" + x.name + "(" + x.id.ToString() + ")<br/>");
+                                    strContent.AppendLine("节点监控组件描述:" + x.discription + "<br/>");
+                                    strContent.AppendLine("节点监控类名,命名空间:" + x.classname + "," +
+                                                          x.classnamespace.ToString() + "<br/>");
+                                    strContent.AppendLine("节点监控组件最后一次心跳时间:" + x.lastmonitortime + "<br/>");
+                                    AlarmHelper.AlarmAsync(node.isenablealarm, (AlarmType) node.alarmtype, alaramperson,
+                                        title, strContent.ToString());
+                                }
                             }
                             
                             #endregion
