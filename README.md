@@ -23,6 +23,7 @@
 ##分布式任务调度平台部分截图##
 ![登录界面](http://files.cnblogs.com/files/taomylife/login.gif)
 ![统计页面](http://files.cnblogs.com/files/taomylife/%E7%BB%9F%E8%AE%A1%E9%A1%B5.gif)
+![添加任务](http://files.cnblogs.com/files/taomylife/addtask.gif)
 ![任务列表](http://files.cnblogs.com/files/taomylife/task.gif)
 
 
