@@ -24,9 +24,9 @@ public class _51bookHelper
     //创建日记对象
 
     //公司代码
-    private  static string agencyCode = "NDLXS";
+    private  static string agencyCode = "";
     //安全码
-    private  static string safetyCode = "H&*WUgd2";  //正式账号
+    private  static string safetyCode = "";  //正式账号
 
      
 
