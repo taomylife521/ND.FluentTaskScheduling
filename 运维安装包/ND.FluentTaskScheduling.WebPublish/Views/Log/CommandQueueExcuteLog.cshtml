@@ -1,0 +1,272 @@
+﻿@*@model IEnumerable<ND.FluentTaskScheduling.Model.response.CommandLogListDto>*@
+@using ND.FluentTaskScheduling.Model.enums
+@using ND.FluentTaskScheduling.Model.response
+@using ND.FluentTaskScheduling.Model
+
+@{
+    ViewBag.Title = "命令队列执行日志";
+    List<NodeDetailDto> nodelist = ViewBag.NodeList as List<NodeDetailDto>;
+    List<tb_commandlibdetail> commandlist = ViewBag.CommandList as List<tb_commandlibdetail>;
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<section class="content-header">
+    <h1>
+        命令队列执行日志列表
+        @*<small>展示列表</small>*@
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 命令管理</a></li>
+        <li><a href="#">命令队列执行日志列表</a></li>
+    </ol>
+</section>
+
+<section class="content">
+    
+    <!--查询条件-->
+   
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">检索条件</h3>
+                <div class="box-tools pull-right">
+
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+
+            <div class="box-body">
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>日志创建起始时间:</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" name="LogCreateTimeRange" class="form-control" value="@ViewBag.LogCreateTimeRange" id="reservation">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>节点名称</label>
+                            <select class="form-control select2" name="NodeId" id="selNodeNameList" >
+                                <option value="-1">全部</option>
+                                @for (int i = 0; i < nodelist.Count; i++)
+                                {
+                                    <option value="@nodelist[i].NodeDetail.id" @(ViewBag.NodeId == nodelist[i].NodeDetail.id.ToString() ? "selected='selected'" : "")>@nodelist[i].NodeDetail.nodename</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>命令名称</label>
+                            <select class="form-control select2" name="CommandId" id="selCommandNameList">
+                                <option value="-1">全部</option>
+                                @for (int i = 0; i < commandlist.Count; i++)
+                                {
+                                    <option value="@commandlist[i].id" @(ViewBag.CommandId == commandlist[i].id.ToString() ? "selected='selected'" : "")>@commandlist[i].commandname</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>命令执行状态</label>
+                            <select class="form-control select2" name="ExecuteStatus" id="selcommandstatus">
+                                <option value="-1">全部</option>
+                                @foreach (var o in (ND.FluentTaskScheduling.Helper.EnumHelper<ExecuteStatus>.GetAllEnumsOfList2()))
+                                {
+                                    <option value="@o.Value" @((ViewBag.ExecuteStatus + "") == o.Value ? "selected='selected'" : "")>@o.Text</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    @*<div class="col-md-2">
+                        <div class="form-group">
+                            <label>命令队列编号:</label>
+                            <div class="input-group">
+                                <input type="text" name="CommandQueueId" id="txtCommandQueueId" class="form-control" value="">
+                            </div>
+                        </div>
+
+                    </div>*@
+
+                </div>
+
+            </div>
+
+            <div class="box-footer">
+                <button type="button" class="btn margin-r-5 btn-primary pull-right" id="btnSearchCommandQueueExecuteLog">查询</button>
+            </div>
+
+        </div>
+    
+
+    <div class="box box-default">
+        <!--任务列表-->
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">命令队列执行日志展示列表</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="tbCommandQueueExcuteLogList" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>日志编号</th>
+                                    <th>命令执行日志</th>
+                                    <th>节点编号</th>
+                                    <th>命令名称</th>
+                                    <th>命令参数</th>
+                                    <th>命令执行状态</th>
+                                    <th>总耗时</th>
+                                    <th>命令运行结果</th>
+                                    <th>命令创建时间</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @*@foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <td>@item.CommandLogDetail.commandqueueid</td>
+                                        <td class="logmsg" data-logmsg="@item.CommandLogDetail.msg"></td>
+                                        <td>@item.NodeDetail.nodename</td>
+                                        <td>@item.CommandDetail.commandname</td>
+                                        <td>@item.CommandLogDetail.commandparams</td>
+                                        <td class="executestatus_@item.CommandLogDetail.commandstate">
+                                            @(((ND.FluentTaskScheduling.Model.enums.ExecuteStatus)item.CommandLogDetail.commandstate).description())
+                                        </td>
+                                        <td><a>@item.CommandLogDetail.totalruntime</a></td>
+                                        <td>@item.CommandLogDetail.commandresult</td>
+                                        <td>@item.CommandLogDetail.logcreatetime</td>
+                                    </tr>
+                                }*@
+
+
+                            </tbody>
+                            <tfoot>
+
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(function () {
+        var tbl;
+        $(function () {
+            tbl = $('#tbCommandQueueExcuteLogList').DataTable({
+                "aoColumns": [
+
+                  { "bSortable": true, "data": "CommandLogDetail.id" },//编号
+                  { "data": "CommandLogDetail.msg" },
+                  {
+                      "mRender": function (mData, type, full) {
+                          var html = [];
+                          html.push("<a class=\"node\"  href=\"../Node/Index?nodeid=" + full.NodeDetail.id + "\">" + full.NodeDetail.nodename + "</a>")
+                          return html.join('');
+                      }
+                  },
+                    {
+                        "mRender": function (mData, type, full) {
+                            var html = [];
+                            html.push("<a class=\"command\" href=\"../Command/Index?commandid=" + full.CommandDetail.id + "\">" + full.CommandDetail.commandname + "</a>")
+                            return html.join('');
+                        }
+                    },
+                    { "data": "CommandLogDetail.commandparams" },
+                     {
+                         "mRender": function (mData, type, full) {
+                             var html = [];
+                             html.push("<a  class=\"executestatus_" + full.CommandLogDetail.commandstate + "\">" + _G.StatusDiscription($("#selcommandstatus option"), full.CommandLogDetail.commandstate) + "</a>")
+                             return html.join('');
+                         }
+                     },
+
+                  { "data": "CommandLogDetail.totalruntime" },
+                  { "data": "CommandLogDetail.commandresult" },
+                  { "data": "CommandLogDetail.logcreatetime" }
+
+
+                ],
+                "paging": true,
+                "lengthChange": true,
+                // "searching": true,//是否允许Datatables开启本地搜索
+                "ordering": false,//是否允许Datatables开启排序
+                "info": true,//控制是否显示表格左下角的信息
+                "autoWidth": true,//自动宽度
+                "bProcessing": true, //DataTables载入数据时，是否显示‘进度’提示
+                "bScrollCollapse": true, //是否开启DataTables的高度自适应，当数据条数不够分页数据条数的时候，插件高度是否随数据条数而改变
+                "bPaginate": true, //是否显示（应用）分页器
+                "bInfo": true, //是否显示页脚信息，DataTables插件左下角显示记录数
+                "sPaginationType": "full_numbers", //详细分页组，可以支持直接跳转到某页
+                "sScrollX": "100%",
+                "scrollX": true,
+                "iDisplayLength": 10,//默认显示
+                "aLengthMenu": [10, 15, 20, 25, 50],//控制每页显示多少个
+                "oLanguage": oLanguageData,
+                "bServerSide": true,////指定服务端分页，必须的属性！
+                "sAjaxSource": "CommandQueueExcuteLog",
+                "fnServerParams": function (aoData) {
+                    aoData.push({ "name": "NodeId", "value": $("#selNodeNameList option:selected").attr("value") });
+                    aoData.push({ "name": "ExecuteStatus", "value": $("#selcommandstatus option:selected").attr("value") });
+                    aoData.push({ "name": "LogCreateTimeRange", "value": $("#reservation").val() });
+                    aoData.push({ "name": "CommandId", "value": $("#selCommandNameList option:selected").attr("value") });
+                    aoData.push({ "name": "CommandQueueId", "value": '@ViewBag.CommandQueueId' });//$("#txtCommandQueueId").val().length <= 0 ? "-1" : $("#txtCommandQueueId").val()
+                },
+                "fnServerData": function (sSource, aoData, fnCallback) {
+
+                    $.ajax({
+                        "dataType": 'json',
+                        "type": "POST",
+                        "url": sSource,
+                        "data": aoData,
+                        "success": function (data) {
+                            tbl.clear();
+                            fnCallback(data);
+                        }
+                    });
+                }
+
+            });
+            //点击查询
+            $("#btnSearchCommandQueueExecuteLog").click(function () {
+                tbl.clear();
+                tbl.draw();
+            });
+
+            //$(".logmsg").each(function () {
+            //    $(this).html($(this).attr("data-logmsg"))
+            //});
+
+
+        })
+    })
+
+</script>
+
+
+

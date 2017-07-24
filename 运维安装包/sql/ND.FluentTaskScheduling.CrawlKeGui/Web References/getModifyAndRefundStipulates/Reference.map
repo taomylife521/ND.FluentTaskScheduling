@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://ws.51book.com:8000//ltips/services/getModifyAndRefundStipulatesService1.0?wsdl" filename="GetModifyAndRefundStipulatesServiceImpl_1_0Service.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

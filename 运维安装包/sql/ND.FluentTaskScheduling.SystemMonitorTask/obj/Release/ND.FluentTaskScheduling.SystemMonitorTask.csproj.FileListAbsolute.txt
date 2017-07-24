@@ -1,0 +1,5 @@
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.SystemMonitorTask\bin\Release\ND.FluentTaskScheduling.SystemMonitorTask.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.SystemMonitorTask\bin\Release\ND.FluentTaskScheduling.SystemMonitorTask.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.SystemMonitorTask\obj\Release\ND.FluentTaskScheduling.SystemMonitorTask.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.SystemMonitorTask\obj\Release\ND.FluentTaskScheduling.SystemMonitorTask.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.SystemMonitorTask\obj\Release\ND.FluentTaskScheduling.SystemMonitorTask.csprojResolveAssemblyReference.cache

@@ -1,9 +1,0 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ND.FluentTaskScheduling.CrawlKeGui.Properties" GeneratedClassName="Settings">
-  <Profiles />
-  <Settings>
-    <Setting Name="ND_FluentTaskScheduling_CrawlKeGui_getModifyAndRefundStipulates_GetModifyAndRefundStipulatesServiceImpl_1_0Service" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://ws.51book.com:8000//ltips/services/getModifyAndRefundStipulatesService1.0</Value>
-    </Setting>
-  </Settings>
-</SettingsFile>
