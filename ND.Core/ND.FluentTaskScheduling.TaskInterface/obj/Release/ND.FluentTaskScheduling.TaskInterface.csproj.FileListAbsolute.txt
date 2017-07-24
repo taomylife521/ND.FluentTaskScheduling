@@ -3,4 +3,3 @@ D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.TaskIn
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.TaskInterface\bin\Release\Newtonsoft.Json.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.TaskInterface\obj\Release\ND.FluentTaskScheduling.TaskInterface.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.TaskInterface\obj\Release\ND.FluentTaskScheduling.TaskInterface.pdb
-D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.TaskInterface\obj\Release\ND.FluentTaskScheduling.TaskInterface.csprojResolveAssemblyReference.cache

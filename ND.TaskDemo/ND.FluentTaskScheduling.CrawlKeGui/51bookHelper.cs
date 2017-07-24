@@ -6,6 +6,7 @@ using System.Web;
 using System.Xml.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading;
 using Newtonsoft.Json;
 using ND.FluentTaskScheduling.CrawlKeGui.getModifyAndRefundStipulates;
 
@@ -44,6 +45,7 @@ public class _51bookHelper
         {
             getModifyAndRefundStipulatesReply result = new GetModifyAndRefundStipulatesServiceImpl_1_0Service().getModifyAndRefundStipulates(model);
             return result;
+            
           
         }
         catch (Exception e)

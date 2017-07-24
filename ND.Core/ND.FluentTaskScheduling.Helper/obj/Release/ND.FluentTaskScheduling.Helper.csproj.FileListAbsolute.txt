@@ -4,4 +4,3 @@ D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Helper
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Helper\bin\Release\SharpCompress.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Helper\obj\Release\ND.FluentTaskScheduling.Helper.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Helper\obj\Release\ND.FluentTaskScheduling.Helper.pdb
-D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Helper\obj\Release\ND.FluentTaskScheduling.Helper.csprojResolveAssemblyReference.cache

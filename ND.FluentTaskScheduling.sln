@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.Sys
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.AppDomainTask", "ND.TaskDemo\ND.FluentTaskScheduling.AppDomainTask\ND.FluentTaskScheduling.AppDomainTask.csproj", "{4924DA7B-A221-4EC6-83BF-77D1F9954DDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ND.TaskDemo\ConsoleApplication1\ConsoleApplication1.csproj", "{118AFE44-DC93-4712-B54C-B3C62F537859}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,10 @@ Global
 		{4924DA7B-A221-4EC6-83BF-77D1F9954DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4924DA7B-A221-4EC6-83BF-77D1F9954DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4924DA7B-A221-4EC6-83BF-77D1F9954DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{118AFE44-DC93-4712-B54C-B3C62F537859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{118AFE44-DC93-4712-B54C-B3C62F537859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{118AFE44-DC93-4712-B54C-B3C62F537859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{118AFE44-DC93-4712-B54C-B3C62F537859}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,5 +128,6 @@ Global
 		{9F0D124C-EF25-4685-A960-698656228644} = {10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}
 		{B12FFEC5-9869-40D1-8A18-92FA32D0A918} = {10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}
 		{4924DA7B-A221-4EC6-83BF-77D1F9954DDA} = {10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}
+		{118AFE44-DC93-4712-B54C-B3C62F537859} = {10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}
 	EndGlobalSection
 EndGlobal

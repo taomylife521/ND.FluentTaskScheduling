@@ -184,12 +184,12 @@ namespace ND.FluentTaskScheduling.Helper
                case AlarmType.Email://邮件报警
                    { 
                          Email email = new Email();
-                         email.mailFrom = "niding@126.com";
-                         email.mailPwd = "QL@1216?niding";
+                         email.mailFrom = "";
+                         email.mailPwd = "";
                         email.mailSubject = title;
                         email.mailBody = content;
                         email.isbodyHtml = true;    //是否是HTML
-                        email.host = "smtp.126.com";//如果是QQ邮箱则：smtp:qq.com,依次类推
+                        email.host = "";//如果是QQ邮箱则：smtp:qq.com,依次类推
                         email.mailToArray = alarmperson.Split(',').ToList().ToArray();// new string[] { "******@qq.com","12345678@qq.com"};//接收者邮件集合
                        // email.mailCcArray = new string[] { "******@qq.com" };//抄送者邮件集合
                         email.Send();
@@ -198,6 +198,7 @@ namespace ND.FluentTaskScheduling.Helper
                    break;
                case AlarmType.SMS://短信报警
                    break;
+
                default:
                    break;
            }
