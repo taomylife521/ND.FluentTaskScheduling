@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FlightOrderDBModelStoreContainer" CdmEntityContainer="FlightOrderDBEntities">
+    <EntitySetMapping Name="tb_orders">
+      <EntityTypeMapping TypeName="FlightOrderDBModel.tb_orders">
+        <MappingFragment StoreEntitySet="tb_orders">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="contactPerson" ColumnName="contactPerson" />
+          <ScalarProperty Name="contactMobile" ColumnName="contactMobile" />
+          <ScalarProperty Name="contactTel" ColumnName="contactTel" />
+          <ScalarProperty Name="contactEmail" ColumnName="contactEmail" />
+          <ScalarProperty Name="expendTotal" ColumnName="expendTotal" />
+          <ScalarProperty Name="expendFirst" ColumnName="expendFirst" />
+          <ScalarProperty Name="expendTime" ColumnName="expendTime" />
+          <ScalarProperty Name="expendPaymentTime" ColumnName="expendPaymentTime" />
+          <ScalarProperty Name="incomeTotal" ColumnName="incomeTotal" />
+          <ScalarProperty Name="incomeFirst" ColumnName="incomeFirst" />
+          <ScalarProperty Name="incomeTime" ColumnName="incomeTime" />
+          <ScalarProperty Name="incomePaymentTime" ColumnName="incomePaymentTime" />
+          <ScalarProperty Name="advanceSpend" ColumnName="advanceSpend" />
+          <ScalarProperty Name="roomCount" ColumnName="roomCount" />
+          <ScalarProperty Name="refundRoomCount" ColumnName="refundRoomCount" />
+          <ScalarProperty Name="isOnline" ColumnName="isOnline" />
+          <ScalarProperty Name="isChujia" ColumnName="isChujia" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="orderStatus" ColumnName="orderStatus" />
+          <ScalarProperty Name="createTime" ColumnName="createTime" />
+          <ScalarProperty Name="paymentType" ColumnName="paymentType" />
+          <ScalarProperty Name="payTime" ColumnName="payTime" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="isInvoice" ColumnName="isInvoice" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="isTravelOrder" ColumnName="isTravelOrder" />
+          <ScalarProperty Name="travelOrderTime" ColumnName="travelOrderTime" />
+          <ScalarProperty Name="travelOrderAdmin" ColumnName="travelOrderAdmin" />
+          <ScalarProperty Name="noLineOrderAdmin" ColumnName="noLineOrderAdmin" />
+          <ScalarProperty Name="remarkCustomer" ColumnName="remarkCustomer" />
+          <ScalarProperty Name="remarkTravel" ColumnName="remarkTravel" />
+          <ScalarProperty Name="remarkAdmin" ColumnName="remarkAdmin" />
+          <ScalarProperty Name="canOpenInvoiceAmount" ColumnName="canOpenInvoiceAmount" />
+          <ScalarProperty Name="payor" ColumnName="payor" />
+          <ScalarProperty Name="incomePostMoney" ColumnName="incomePostMoney" />
+          <ScalarProperty Name="outputPostMoney" ColumnName="outputPostMoney" />
+          <ScalarProperty Name="expendInvoiceTime" ColumnName="expendInvoiceTime" />
+          <ScalarProperty Name="orderOpreatorAdmin" ColumnName="orderOpreatorAdmin" />
+          <ScalarProperty Name="discountAmount" ColumnName="discountAmount" />
+          <ScalarProperty Name="activityType" ColumnName="activityType" />
+          <ScalarProperty Name="isEnabled" ColumnName="isEnabled" />
+          <ScalarProperty Name="planningcommissionTime" ColumnName="planningcommissionTime" />
+          <ScalarProperty Name="salescommissionTime" ColumnName="salescommissionTime" />
+          <ScalarProperty Name="businessSource" ColumnName="businessSource" />
+          <ScalarProperty Name="salePerson" ColumnName="salePerson" />
+          <ScalarProperty Name="expendRefund" ColumnName="expendRefund" />
+          <ScalarProperty Name="expendRefunded" ColumnName="expendRefunded" />
+          <ScalarProperty Name="incomeRefund" ColumnName="incomeRefund" />
+          <ScalarProperty Name="incomeRefunded" ColumnName="incomeRefunded" />
+          <ScalarProperty Name="jielvstatus" ColumnName="jielvstatus" />
+          <ScalarProperty Name="jielvClause" ColumnName="jielvClause" />
+          <ScalarProperty Name="hotelName" ColumnName="hotelName" />
+          <ScalarProperty Name="isComment" ColumnName="isComment" />
+          <ScalarProperty Name="orderPaytype" ColumnName="orderPaytype" />
+          <ScalarProperty Name="delDegree" ColumnName="delDegree" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

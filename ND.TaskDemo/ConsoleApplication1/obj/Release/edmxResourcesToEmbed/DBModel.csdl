@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FlightOrderDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tb_orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="orderNum" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="contactPerson" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contactMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contactTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contactEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="expendTotal" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="expendFirst" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="expendTime" Type="DateTime" Precision="3" />
+    <Property Name="expendPaymentTime" Type="DateTime" Precision="3" />
+    <Property Name="incomeTotal" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="incomeFirst" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="incomeTime" Type="DateTime" Precision="3" />
+    <Property Name="incomePaymentTime" Type="DateTime" Precision="3" />
+    <Property Name="advanceSpend" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="roomCount" Type="Decimal" Precision="10" Scale="1" />
+    <Property Name="refundRoomCount" Type="Decimal" Precision="10" Scale="1" />
+    <Property Name="isOnline" Type="Int32" />
+    <Property Name="isChujia" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="orderStatus" Type="Int32" />
+    <Property Name="createTime" Type="DateTime" Precision="3" />
+    <Property Name="paymentType" Type="Int32" />
+    <Property Name="payTime" Type="DateTime" Precision="3" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="isInvoice" Type="Int32" />
+    <Property Name="hotelid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isTravelOrder" Type="Int32" />
+    <Property Name="travelOrderTime" Type="DateTime" Precision="3" />
+    <Property Name="travelOrderAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="noLineOrderAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="remarkCustomer" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="remarkTravel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="remarkAdmin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="canOpenInvoiceAmount" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="payor" Type="Int32" />
+    <Property Name="incomePostMoney" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="outputPostMoney" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="expendInvoiceTime" Type="DateTime" Precision="3" />
+    <Property Name="orderOpreatorAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="discountAmount" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="activityType" Type="Int32" />
+    <Property Name="isEnabled" Type="Int32" />
+    <Property Name="planningcommissionTime" Type="DateTime" Precision="3" />
+    <Property Name="salescommissionTime" Type="DateTime" Precision="3" />
+    <Property Name="businessSource" Type="Int32" />
+    <Property Name="salePerson" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="expendRefund" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="expendRefunded" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="incomeRefund" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="incomeRefunded" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="jielvstatus" Type="Int32" />
+    <Property Name="jielvClause" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="hotelName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="isComment" Type="Int32" />
+    <Property Name="orderPaytype" Type="Int32" />
+    <Property Name="delDegree" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="FlightOrderDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_orders" EntityType="Self.tb_orders" />
+  </EntityContainer>
+</Schema>

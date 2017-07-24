@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FlightOrderDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_orders">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="orderNum" Type="nvarchar" MaxLength="200" />
+          <Property Name="userId" Type="int" />
+          <Property Name="userName" Type="nvarchar" MaxLength="100" />
+          <Property Name="contactPerson" Type="varchar" MaxLength="100" />
+          <Property Name="contactMobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="contactTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="contactEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="expendTotal" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="expendFirst" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="expendTime" Type="datetime" />
+          <Property Name="expendPaymentTime" Type="datetime" />
+          <Property Name="incomeTotal" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="incomeFirst" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="incomeTime" Type="datetime" />
+          <Property Name="incomePaymentTime" Type="datetime" />
+          <Property Name="advanceSpend" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="roomCount" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="refundRoomCount" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="isOnline" Type="int" />
+          <Property Name="isChujia" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="orderStatus" Type="int" />
+          <Property Name="createTime" Type="datetime" />
+          <Property Name="paymentType" Type="int" />
+          <Property Name="payTime" Type="datetime" />
+          <Property Name="remark" Type="ntext" />
+          <Property Name="isInvoice" Type="int" />
+          <Property Name="hotelid" Type="varchar" MaxLength="50" />
+          <Property Name="isTravelOrder" Type="int" />
+          <Property Name="travelOrderTime" Type="datetime" />
+          <Property Name="travelOrderAdmin" Type="varchar" MaxLength="50" />
+          <Property Name="noLineOrderAdmin" Type="varchar" MaxLength="50" />
+          <Property Name="remarkCustomer" Type="nvarchar" MaxLength="1000" />
+          <Property Name="remarkTravel" Type="ntext" />
+          <Property Name="remarkAdmin" Type="ntext" />
+          <Property Name="canOpenInvoiceAmount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="payor" Type="int" />
+          <Property Name="incomePostMoney" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="outputPostMoney" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="expendInvoiceTime" Type="datetime" />
+          <Property Name="orderOpreatorAdmin" Type="varchar" MaxLength="50" />
+          <Property Name="discountAmount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="activityType" Type="int" />
+          <Property Name="isEnabled" Type="int" />
+          <Property Name="planningcommissionTime" Type="datetime" />
+          <Property Name="salescommissionTime" Type="datetime" />
+          <Property Name="businessSource" Type="int" />
+          <Property Name="salePerson" Type="varchar" MaxLength="50" />
+          <Property Name="expendRefund" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="expendRefunded" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="incomeRefund" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="incomeRefunded" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="jielvstatus" Type="int" />
+          <Property Name="jielvClause" Type="nvarchar" MaxLength="100" />
+          <Property Name="hotelName" Type="varchar" MaxLength="200" />
+          <Property Name="isComment" Type="int" />
+          <Property Name="orderPaytype" Type="int" />
+          <Property Name="delDegree" Type="int" />
+        </EntityType>
+        <EntityContainer Name="FlightOrderDBModelStoreContainer">
+          <EntitySet Name="tb_orders" EntityType="Self.tb_orders" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FlightOrderDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tb_orders">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="orderNum" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="contactPerson" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="contactMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contactTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contactEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="expendTotal" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="expendFirst" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="expendTime" Type="DateTime" Precision="3" />
+          <Property Name="expendPaymentTime" Type="DateTime" Precision="3" />
+          <Property Name="incomeTotal" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="incomeFirst" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="incomeTime" Type="DateTime" Precision="3" />
+          <Property Name="incomePaymentTime" Type="DateTime" Precision="3" />
+          <Property Name="advanceSpend" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="roomCount" Type="Decimal" Precision="10" Scale="1" />
+          <Property Name="refundRoomCount" Type="Decimal" Precision="10" Scale="1" />
+          <Property Name="isOnline" Type="Int32" />
+          <Property Name="isChujia" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="orderStatus" Type="Int32" />
+          <Property Name="createTime" Type="DateTime" Precision="3" />
+          <Property Name="paymentType" Type="Int32" />
+          <Property Name="payTime" Type="DateTime" Precision="3" />
+          <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isInvoice" Type="Int32" />
+          <Property Name="hotelid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isTravelOrder" Type="Int32" />
+          <Property Name="travelOrderTime" Type="DateTime" Precision="3" />
+          <Property Name="travelOrderAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="noLineOrderAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="remarkCustomer" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="remarkTravel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="remarkAdmin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="canOpenInvoiceAmount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="payor" Type="Int32" />
+          <Property Name="incomePostMoney" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="outputPostMoney" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="expendInvoiceTime" Type="DateTime" Precision="3" />
+          <Property Name="orderOpreatorAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="discountAmount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="activityType" Type="Int32" />
+          <Property Name="isEnabled" Type="Int32" />
+          <Property Name="planningcommissionTime" Type="DateTime" Precision="3" />
+          <Property Name="salescommissionTime" Type="DateTime" Precision="3" />
+          <Property Name="businessSource" Type="Int32" />
+          <Property Name="salePerson" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="expendRefund" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="expendRefunded" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="incomeRefund" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="incomeRefunded" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="jielvstatus" Type="Int32" />
+          <Property Name="jielvClause" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="hotelName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="isComment" Type="Int32" />
+          <Property Name="orderPaytype" Type="Int32" />
+          <Property Name="delDegree" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="FlightOrderDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_orders" EntityType="Self.tb_orders" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FlightOrderDBModelStoreContainer" CdmEntityContainer="FlightOrderDBEntities">
+          <EntitySetMapping Name="tb_orders">
+            <EntityTypeMapping TypeName="FlightOrderDBModel.tb_orders">
+              <MappingFragment StoreEntitySet="tb_orders">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="contactPerson" ColumnName="contactPerson" />
+                <ScalarProperty Name="contactMobile" ColumnName="contactMobile" />
+                <ScalarProperty Name="contactTel" ColumnName="contactTel" />
+                <ScalarProperty Name="contactEmail" ColumnName="contactEmail" />
+                <ScalarProperty Name="expendTotal" ColumnName="expendTotal" />
+                <ScalarProperty Name="expendFirst" ColumnName="expendFirst" />
+                <ScalarProperty Name="expendTime" ColumnName="expendTime" />
+                <ScalarProperty Name="expendPaymentTime" ColumnName="expendPaymentTime" />
+                <ScalarProperty Name="incomeTotal" ColumnName="incomeTotal" />
+                <ScalarProperty Name="incomeFirst" ColumnName="incomeFirst" />
+                <ScalarProperty Name="incomeTime" ColumnName="incomeTime" />
+                <ScalarProperty Name="incomePaymentTime" ColumnName="incomePaymentTime" />
+                <ScalarProperty Name="advanceSpend" ColumnName="advanceSpend" />
+                <ScalarProperty Name="roomCount" ColumnName="roomCount" />
+                <ScalarProperty Name="refundRoomCount" ColumnName="refundRoomCount" />
+                <ScalarProperty Name="isOnline" ColumnName="isOnline" />
+                <ScalarProperty Name="isChujia" ColumnName="isChujia" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="orderStatus" ColumnName="orderStatus" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="paymentType" ColumnName="paymentType" />
+                <ScalarProperty Name="payTime" ColumnName="payTime" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="isInvoice" ColumnName="isInvoice" />
+                <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+                <ScalarProperty Name="isTravelOrder" ColumnName="isTravelOrder" />
+                <ScalarProperty Name="travelOrderTime" ColumnName="travelOrderTime" />
+                <ScalarProperty Name="travelOrderAdmin" ColumnName="travelOrderAdmin" />
+                <ScalarProperty Name="noLineOrderAdmin" ColumnName="noLineOrderAdmin" />
+                <ScalarProperty Name="remarkCustomer" ColumnName="remarkCustomer" />
+                <ScalarProperty Name="remarkTravel" ColumnName="remarkTravel" />
+                <ScalarProperty Name="remarkAdmin" ColumnName="remarkAdmin" />
+                <ScalarProperty Name="canOpenInvoiceAmount" ColumnName="canOpenInvoiceAmount" />
+                <ScalarProperty Name="payor" ColumnName="payor" />
+                <ScalarProperty Name="incomePostMoney" ColumnName="incomePostMoney" />
+                <ScalarProperty Name="outputPostMoney" ColumnName="outputPostMoney" />
+                <ScalarProperty Name="expendInvoiceTime" ColumnName="expendInvoiceTime" />
+                <ScalarProperty Name="orderOpreatorAdmin" ColumnName="orderOpreatorAdmin" />
+                <ScalarProperty Name="discountAmount" ColumnName="discountAmount" />
+                <ScalarProperty Name="activityType" ColumnName="activityType" />
+                <ScalarProperty Name="isEnabled" ColumnName="isEnabled" />
+                <ScalarProperty Name="planningcommissionTime" ColumnName="planningcommissionTime" />
+                <ScalarProperty Name="salescommissionTime" ColumnName="salescommissionTime" />
+                <ScalarProperty Name="businessSource" ColumnName="businessSource" />
+                <ScalarProperty Name="salePerson" ColumnName="salePerson" />
+                <ScalarProperty Name="expendRefund" ColumnName="expendRefund" />
+                <ScalarProperty Name="expendRefunded" ColumnName="expendRefunded" />
+                <ScalarProperty Name="incomeRefund" ColumnName="incomeRefund" />
+                <ScalarProperty Name="incomeRefunded" ColumnName="incomeRefunded" />
+                <ScalarProperty Name="jielvstatus" ColumnName="jielvstatus" />
+                <ScalarProperty Name="jielvClause" ColumnName="jielvClause" />
+                <ScalarProperty Name="hotelName" ColumnName="hotelName" />
+                <ScalarProperty Name="isComment" ColumnName="isComment" />
+                <ScalarProperty Name="orderPaytype" ColumnName="orderPaytype" />
+                <ScalarProperty Name="delDegree" ColumnName="delDegree" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

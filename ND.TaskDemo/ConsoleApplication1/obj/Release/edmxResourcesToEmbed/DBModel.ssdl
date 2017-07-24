@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FlightOrderDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tb_orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="orderNum" Type="nvarchar" MaxLength="200" />
+    <Property Name="userId" Type="int" />
+    <Property Name="userName" Type="nvarchar" MaxLength="100" />
+    <Property Name="contactPerson" Type="varchar" MaxLength="100" />
+    <Property Name="contactMobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="contactTel" Type="nvarchar" MaxLength="50" />
+    <Property Name="contactEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="expendTotal" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="expendFirst" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="expendTime" Type="datetime" />
+    <Property Name="expendPaymentTime" Type="datetime" />
+    <Property Name="incomeTotal" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="incomeFirst" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="incomeTime" Type="datetime" />
+    <Property Name="incomePaymentTime" Type="datetime" />
+    <Property Name="advanceSpend" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="roomCount" Type="decimal" Precision="10" Scale="1" />
+    <Property Name="refundRoomCount" Type="decimal" Precision="10" Scale="1" />
+    <Property Name="isOnline" Type="int" />
+    <Property Name="isChujia" Type="int" />
+    <Property Name="status" Type="int" />
+    <Property Name="orderStatus" Type="int" />
+    <Property Name="createTime" Type="datetime" />
+    <Property Name="paymentType" Type="int" />
+    <Property Name="payTime" Type="datetime" />
+    <Property Name="remark" Type="ntext" />
+    <Property Name="isInvoice" Type="int" />
+    <Property Name="hotelid" Type="varchar" MaxLength="50" />
+    <Property Name="isTravelOrder" Type="int" />
+    <Property Name="travelOrderTime" Type="datetime" />
+    <Property Name="travelOrderAdmin" Type="varchar" MaxLength="50" />
+    <Property Name="noLineOrderAdmin" Type="varchar" MaxLength="50" />
+    <Property Name="remarkCustomer" Type="nvarchar" MaxLength="1000" />
+    <Property Name="remarkTravel" Type="ntext" />
+    <Property Name="remarkAdmin" Type="ntext" />
+    <Property Name="canOpenInvoiceAmount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="payor" Type="int" />
+    <Property Name="incomePostMoney" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="outputPostMoney" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="expendInvoiceTime" Type="datetime" />
+    <Property Name="orderOpreatorAdmin" Type="varchar" MaxLength="50" />
+    <Property Name="discountAmount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="activityType" Type="int" />
+    <Property Name="isEnabled" Type="int" />
+    <Property Name="planningcommissionTime" Type="datetime" />
+    <Property Name="salescommissionTime" Type="datetime" />
+    <Property Name="businessSource" Type="int" />
+    <Property Name="salePerson" Type="varchar" MaxLength="50" />
+    <Property Name="expendRefund" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="expendRefunded" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="incomeRefund" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="incomeRefunded" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="jielvstatus" Type="int" />
+    <Property Name="jielvClause" Type="nvarchar" MaxLength="100" />
+    <Property Name="hotelName" Type="varchar" MaxLength="200" />
+    <Property Name="isComment" Type="int" />
+    <Property Name="orderPaytype" Type="int" />
+    <Property Name="delDegree" Type="int" />
+  </EntityType>
+  <EntityContainer Name="FlightOrderDBModelStoreContainer">
+    <EntitySet Name="tb_orders" EntityType="Self.tb_orders" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
