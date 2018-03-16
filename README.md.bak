@@ -39,7 +39,7 @@
 7. 目前的存储层主要都是sqlserver，以后命令队列要换成RabbitMQ或者其它第三方的消息中间件，有待考量！
 8. 目前想到的集群的实现方案是Zookeeper，类似还有Consul等方案，这个后期考量！
 9. 目前的任务调度是基于quartz.net的，这个感觉需要理解corn表达式，虽然很好理解，但是想着后期能不能换成sqlserver作业调度计划里面的那种计划实现，有待后期研究。
-## 分布式任务调度平台部分截图 ##
+##分布式任务调度平台部分截图##
 ## 登录界面
 ![登录界面](https://github.com/taomylife521/ND.FluentTaskScheduling/blob/master/images/login.png)
 
