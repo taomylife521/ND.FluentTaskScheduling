@@ -5,9 +5,13 @@
 
 所以需要对任务，机子(以后统称节点)进行统一性的管理和操作。任务管理需要很好的进行任务添加，上传，预警，升级，日志查看，任务隔离，资源释放等相关的操作。而节点需要很好的进行添加，执行任务，故障转移，节点升级，节点监控，节点预警等一系列需要考虑到和解决的问题！
 
-#分布式调度平台架构#
-![整体架构图](http://files.cnblogs.com/files/taomylife/%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.gif)
-![整体架构图](http://files.cnblogs.com/files/taomylife/%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E7%8A%B6%E6%80%81%E5%9B%BE.gif)
+# 分布式调度平台架构 #
+
+## 整体架构图
+![整体架构图](https://github.com/taomylife521/ND.FluentTaskScheduling/blob/master/images/architecture.png)
+
+## 任务调度状态中转图
+![任务调度状态中转图](https://github.com/taomylife521/ND.FluentTaskScheduling/blob/master/images/taskstatus.png)
 
 以上的分层，每个层代表一个项目,其中
 
