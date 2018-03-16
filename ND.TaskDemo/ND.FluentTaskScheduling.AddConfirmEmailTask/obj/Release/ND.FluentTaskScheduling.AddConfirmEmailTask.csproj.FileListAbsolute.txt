@@ -1,0 +1,8 @@
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AddConfirmEmailTask\bin\Release\ND.FluentTaskScheduling.AddConfirmEmailTask.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AddConfirmEmailTask\bin\Release\ND.FluentTaskScheduling.AddConfirmEmailTask.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AddConfirmEmailTask\bin\Release\ND.FluentTaskScheduling.TaskInterface.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AddConfirmEmailTask\bin\Release\Newtonsoft.Json.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AddConfirmEmailTask\bin\Release\ND.FluentTaskScheduling.TaskInterface.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AddConfirmEmailTask\obj\Release\ND.FluentTaskScheduling.AddConfirmEmailTask.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AddConfirmEmailTask\obj\Release\ND.FluentTaskScheduling.AddConfirmEmailTask.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AddConfirmEmailTask\obj\Release\ND.FluentTaskScheduling.AddConfirmEmailTask.csprojResolveAssemblyReference.cache

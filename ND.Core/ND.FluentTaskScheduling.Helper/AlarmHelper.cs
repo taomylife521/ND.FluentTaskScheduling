@@ -142,7 +142,7 @@ namespace ND.FluentTaskScheduling.Helper
             try
             {
                 //将邮件发送到SMTP邮件服务器
-                //smtp.Send(myMail);
+                smtp.Send(myMail);
                 return true;
 
             }
@@ -182,18 +182,25 @@ namespace ND.FluentTaskScheduling.Helper
            switch(alarmType)
            {
                case AlarmType.Email://邮件报警
-                   { 
-                         Email email = new Email();
-                         email.mailFrom = "";
-                         email.mailPwd = "";
-                        email.mailSubject = title;
-                        email.mailBody = content;
-                        email.isbodyHtml = true;    //是否是HTML
-                        email.host = "";//如果是QQ邮箱则：smtp:qq.com,依次类推
-                        email.mailToArray = alarmperson.Split(',').ToList().ToArray();// new string[] { "******@qq.com","12345678@qq.com"};//接收者邮件集合
-                       // email.mailCcArray = new string[] { "******@qq.com" };//抄送者邮件集合
-                        email.Send();
-                       email = null;
+                   {
+                       try
+                       {
+                           Email email = new Email();
+                           email.mailFrom = "niding@126.com";
+                           email.mailPwd = "QLND@2011*!?#kr";
+                           email.mailSubject = title;
+                           email.mailBody = content;
+                           email.isbodyHtml = true;    //是否是HTML
+                           email.host = "smtp.126.com";//如果是QQ邮箱则：smtp:qq.com,依次类推
+                           email.mailToArray = alarmperson.Split(',').ToList().ToArray();// new string[] { "******@qq.com","12345678@qq.com"};//接收者邮件集合
+                           // email.mailCcArray = new string[] { "******@qq.com" };//抄送者邮件集合
+                           bool r = email.Send();
+                           email = null;
+                       }
+                       catch(Exception ex)
+                       {
+                           string ss = ex.Message;
+                       }
                    }
                    break;
                case AlarmType.SMS://短信报警

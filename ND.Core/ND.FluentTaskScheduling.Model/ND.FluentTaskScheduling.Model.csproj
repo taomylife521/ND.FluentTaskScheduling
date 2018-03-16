@@ -32,7 +32,7 @@
   <ItemGroup>
     <Reference Include="FluentValidation, Version=6.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ND.Service\ND.FluentTaskScheduling.WebApi\bin\FluentValidation.dll</HintPath>
+      <HintPath>..\..\ND.NodeService\ND.FluentTaskScheduling.NodeService\dll\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

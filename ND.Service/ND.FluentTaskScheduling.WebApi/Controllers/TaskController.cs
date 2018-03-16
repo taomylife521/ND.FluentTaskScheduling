@@ -230,7 +230,7 @@ namespace ND.FluentTaskScheduling.WebApi.Controllers
          /// <returns></returns>
          // [SignAuthorize]
          [ResponseType(typeof(ResponseBase<LoadTaskVersionResponse>))]
-         [HttpPost, Route("taskversiondetail")]
+         [HttpPost, Route("taskversiondetail")]//HttpPost
          public ResponseBase<LoadTaskVersionResponse> TaskVersionDetail(LoadTaskVersionRequest req)
          {
 
@@ -238,7 +238,7 @@ namespace ND.FluentTaskScheduling.WebApi.Controllers
              if (taskversion != null)
              {
                  var task=taskrep.FindSingle(x => x.id == req.TaskId);
-                List<int> useridlist= task.alarmuserid.ConvertToList();
+                 List<int> useridlist=string.IsNullOrEmpty(task.alarmuserid)?new List<int>(): task.alarmuserid.ConvertToList();
                 List<string> AlarmEmailList = new List<string>();
                 List<string> AlarmMobileList = new List<string>();
                 userrepository.Find(x => useridlist.Contains(x.id)).ToList().ForEach(x =>

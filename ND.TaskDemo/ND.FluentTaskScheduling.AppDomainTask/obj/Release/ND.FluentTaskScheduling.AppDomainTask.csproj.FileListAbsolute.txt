@@ -1,0 +1,7 @@
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AppDomainTask\bin\Release\ND.FluentTaskScheduling.AppDomainTask.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AppDomainTask\bin\Release\ND.FluentTaskScheduling.AppDomainTask.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AppDomainTask\bin\Release\ND.FluentTaskScheduling.TaskInterface.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AppDomainTask\bin\Release\Newtonsoft.Json.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AppDomainTask\bin\Release\ND.FluentTaskScheduling.TaskInterface.pdb
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AppDomainTask\obj\Release\ND.FluentTaskScheduling.AppDomainTask.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.TaskDemo\ND.FluentTaskScheduling.AppDomainTask\obj\Release\ND.FluentTaskScheduling.AppDomainTask.pdb

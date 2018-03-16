@@ -21,7 +21,7 @@ namespace ND.FluentTaskScheduling.Web.Controllers
             {
                 ViewBag.NodeList = nodelist.Data.aaData;
             }
-            string daterange = DateTime.Now.AddMonths(-3).ToString("yyyy-MM-dd") + "/" + DateTime.Now.ToString("yyyy-MM-dd");
+            string daterange = DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd") + "/" + DateTime.Now.ToString("yyyy-MM-dd");
             ViewBag.NodeId = nodeid.ToString();
             ViewBag.NodeRunStatus = "-1";
             ViewBag.ListenCommandQueueStatus = "-1";

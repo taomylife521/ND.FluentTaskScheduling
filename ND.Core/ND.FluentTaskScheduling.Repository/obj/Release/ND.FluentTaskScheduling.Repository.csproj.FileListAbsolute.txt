@@ -6,6 +6,7 @@ D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Reposi
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Repository\bin\Release\ND.FluentTaskScheduling.Domain.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Repository\bin\Release\ND.FluentTaskScheduling.Model.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Repository\bin\Release\ND.FluentTaskScheduling.TaskInterface.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Repository\bin\Release\FluentValidation.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Repository\bin\Release\Newtonsoft.Json.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Repository\bin\Release\ND.FluentTaskScheduling.Domain.pdb
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Repository\bin\Release\ND.FluentTaskScheduling.Model.pdb
@@ -13,5 +14,3 @@ D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Reposi
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Repository\obj\Release\ND.FluentTaskScheduling.Repository.csprojResolveAssemblyReference.cache
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Repository\obj\Release\ND.FluentTaskScheduling.Repository.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Repository\obj\Release\ND.FluentTaskScheduling.Repository.pdb
-D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Repository\bin\Release\FluentValidation.dll
-D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Repository\bin\Release\FluentValidation.xml

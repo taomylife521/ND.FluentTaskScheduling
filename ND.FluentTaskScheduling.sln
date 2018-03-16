@@ -43,6 +43,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.App
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ND.TaskDemo\ConsoleApplication1\ConsoleApplication1.csproj", "{118AFE44-DC93-4712-B54C-B3C62F537859}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.TimingSendEmailTask", "ND.TaskDemo\ND.FluentTaskScheduling.TimingSendEmailTask\ND.FluentTaskScheduling.TimingSendEmailTask.csproj", "{232B2848-9C79-4BE3-BE45-7ED52F7523DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ND.FluentTaskScheduling.AddConfirmEmailTask", "ND.TaskDemo\ND.FluentTaskScheduling.AddConfirmEmailTask\ND.FluentTaskScheduling.AddConfirmEmailTask.csproj", "{592B885B-B244-4D03-8F19-BE2815BF10D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +113,14 @@ Global
 		{118AFE44-DC93-4712-B54C-B3C62F537859}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{118AFE44-DC93-4712-B54C-B3C62F537859}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{118AFE44-DC93-4712-B54C-B3C62F537859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232B2848-9C79-4BE3-BE45-7ED52F7523DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232B2848-9C79-4BE3-BE45-7ED52F7523DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232B2848-9C79-4BE3-BE45-7ED52F7523DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232B2848-9C79-4BE3-BE45-7ED52F7523DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{592B885B-B244-4D03-8F19-BE2815BF10D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{592B885B-B244-4D03-8F19-BE2815BF10D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{592B885B-B244-4D03-8F19-BE2815BF10D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{592B885B-B244-4D03-8F19-BE2815BF10D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,5 +141,7 @@ Global
 		{B12FFEC5-9869-40D1-8A18-92FA32D0A918} = {10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}
 		{4924DA7B-A221-4EC6-83BF-77D1F9954DDA} = {10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}
 		{118AFE44-DC93-4712-B54C-B3C62F537859} = {10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}
+		{232B2848-9C79-4BE3-BE45-7ED52F7523DA} = {10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}
+		{592B885B-B244-4D03-8F19-BE2815BF10D0} = {10714E7A-D6FE-40FF-B8D8-D8C0A00A9DC9}
 	EndGlobalSection
 EndGlobal

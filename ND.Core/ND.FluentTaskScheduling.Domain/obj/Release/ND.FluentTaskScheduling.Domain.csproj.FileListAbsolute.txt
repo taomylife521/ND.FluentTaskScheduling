@@ -2,11 +2,10 @@ D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Release\ND.FluentTaskScheduling.Domain.pdb
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Release\ND.FluentTaskScheduling.Model.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Release\ND.FluentTaskScheduling.TaskInterface.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Release\FluentValidation.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Release\Newtonsoft.Json.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Release\ND.FluentTaskScheduling.Model.pdb
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Release\ND.FluentTaskScheduling.TaskInterface.pdb
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\obj\Release\ND.FluentTaskScheduling.Domain.csprojResolveAssemblyReference.cache
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\obj\Release\ND.FluentTaskScheduling.Domain.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\obj\Release\ND.FluentTaskScheduling.Domain.pdb
-D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Release\FluentValidation.dll
-D:\ND.Application\ND.FluentTaskScheduling\ND.Core\ND.FluentTaskScheduling.Domain\bin\Release\FluentValidation.xml

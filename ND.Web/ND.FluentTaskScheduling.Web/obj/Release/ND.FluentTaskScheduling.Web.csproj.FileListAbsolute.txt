@@ -31,6 +31,7 @@ D:\ND.Application\ND.FluentTaskScheduling\ND.Web\ND.FluentTaskScheduling.Web\bin
 D:\ND.Application\ND.FluentTaskScheduling\ND.Web\ND.FluentTaskScheduling.Web\bin\System.Web.WebPages.Razor.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Web\ND.FluentTaskScheduling.Web\bin\WebGrease.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Web\ND.FluentTaskScheduling.Web\bin\SharpCompress.dll
+D:\ND.Application\ND.FluentTaskScheduling\ND.Web\ND.FluentTaskScheduling.Web\bin\FluentValidation.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Web\ND.FluentTaskScheduling.Web\bin\ND.FluentTaskScheduling.Helper.pdb
 D:\ND.Application\ND.FluentTaskScheduling\ND.Web\ND.FluentTaskScheduling.Web\bin\ND.FluentTaskScheduling.Model.pdb
 D:\ND.Application\ND.FluentTaskScheduling\ND.Web\ND.FluentTaskScheduling.Web\bin\ND.FluentTaskScheduling.TaskInterface.pdb
@@ -78,5 +79,3 @@ D:\ND.Application\ND.FluentTaskScheduling\ND.Web\ND.FluentTaskScheduling.Web\bin
 D:\ND.Application\ND.FluentTaskScheduling\ND.Web\ND.FluentTaskScheduling.Web\obj\Release\ND.FluentTaskScheduling.Web.csprojResolveAssemblyReference.cache
 D:\ND.Application\ND.FluentTaskScheduling\ND.Web\ND.FluentTaskScheduling.Web\obj\Release\ND.FluentTaskScheduling.Web.dll
 D:\ND.Application\ND.FluentTaskScheduling\ND.Web\ND.FluentTaskScheduling.Web\obj\Release\ND.FluentTaskScheduling.Web.pdb
-D:\ND.Application\ND.FluentTaskScheduling\ND.Web\ND.FluentTaskScheduling.Web\bin\FluentValidation.dll
-D:\ND.Application\ND.FluentTaskScheduling\ND.Web\ND.FluentTaskScheduling.Web\bin\FluentValidation.xml
